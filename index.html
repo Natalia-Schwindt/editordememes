@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Editor de Memes</title>
+</head>
+<body>
+<header>
+    <h1>Generador de Memes</h1>
+    <nav>
+        <ul>
+            <li><a href=""><i class="fa-regular fa-file-image"></i>Imágen</a></li>
+            <li><a href=""><i class="fa-solid fa-font"></i>Texto</a></li>
+            <li><a href=""><i class="fa-regular fa-lightbulb"></i>Modo oscuro</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <div>
+            <div>
+                <h2>TOP TEXT</h2>
+            </div>
+            <div>
+
+            </div>
+            <div>
+                <h2>BOTTOM TEXT</h2>
+            </div>
+        </div>
+        <button><i class="fa-solid fa-download"></i>Descargar meme</button>
+    </section>
+
+    <aside class="barraLateral">
+        <h3>IMÁGEN</h3>
+        <form action="#">
+            <label for="url">URL</label><br>
+            <input type="url">
+            <h4>FONDO</h4>
+            <input type="color">
+            <select>
+                <option value="ninguno">Ninguno</option>
+                <option value="aclarar">Aclarar</option>
+                <option value="oscurecer">Oscurecer</option>
+                <option value="diferencia">Diferencia</option>
+                <option value="luminosidad">Luminosidad</option>
+                <option value="multiplicar">Multiplicar</option>
+            </select>
+            <h4>FILTROS</h4>
+            <label for="brillo">Brillo</label><br>
+            <input class="margenes" type="range" id="brillo" min="1" max="10" step="1">
+            <br>
+            <label for="opacidad">Opacidad</label><br>
+            <input class="margenes" type="range" id="opacidad" min="1" max="10" step="1">
+            <br>
+            <label for="contraste">Contraste</label><br>
+            <input class="margenes" type="range" id="contraste" min="1" max="10" step="1">
+            <br>
+            <label for="desenfoque">Desenfoque</label><br>
+            <input class="margenes" type="range" id="desenfoque" min="1" max="10" step="1">
+            <br>
+            <label for="escalaDeGrises">Escala De Grises</label><br>
+            <input class="margenes" type="range" id="escalaDeGrises" min="1" max="10" step="1">
+            <br>
+            <label for="sepia">Sepia</label><br>
+            <input class="margenes" type="range" id="sepia" min="1" max="10" step="1">
+            <br>
+            <label for="hue">HUE</label><br>
+            <input class="margenes" type="range" id="hue" min="1" max="10" step="1">
+            <br>
+            <label for="saturado">Saturado</label><br>
+            <input class="margenes" type="range" id="saturado" min="1" max="10" step="1">
+            <br>
+            <label for="negativo">Negativo</label><br>
+            <input class="margenes" type="range" id="negativo" min="1" max="10" step="1">
+        </form>
+        <button>Restablecer filtros</button>
+    </aside>
+    <aside>
+        <h4>TEXTO</h4>
+        <form action="#">
+            <label for="superior">SUPERIOR</label><br>
+            <input type="superior" placeholder="TOP TEXT">
+            <input type="checkbox">
+            <label>Sin texto superior</label>
+            <label for="inferior">SUPERIOR</label><br>
+            <input type="inferior" placeholder="BOTTOM TEXT">
+            <input type="checkbox">
+            <label>Sin texto inferior</label>
+            <label for="fuente">FUENTE</label>
+            <select>
+                <option value="arial">Arial</option>
+                <option value="arialblack">Arial Black</option>
+                <option value="americantypewriter">American Typewriter</option>
+                <option value="andalemono">Andale Mono</option>
+                <option value="comicsan ms">Comic Sans MS</option>
+                <option value="helvetica">Helvetica</option>
+                <option value="impact">Impact</option>
+                <option value="verdana">Verdana</option>
+                <option value="timesnewroman">Times New Roman</option>
+            </select>
+            <input type="number" placeholder="40">
+            <button><i class="fa-solid fa-align-left"></i></button>
+            <button><i class="fa-solid fa-align-center"></i></button>
+            <button><i class="fa-solid fa-align-right"></i></button>
+            <div>
+                <h4>COLOR</h4>
+                <input type="color">
+                <h4>FONDO</h4>
+                <input type="color">
+            </div>
+            <input type="checkbox">
+            <label>Fondo transparente</label>
+            <h4>CONTORNO</h4>
+            <button>Ninguno</button>
+            <button>Claro</button>
+            <button>Oscuro</button>
+            <h4>ESPACIADO</h4>
+            <input type="number" placeholder="35">
+            <H4>INTERLINEADO</H4>
+            <select>
+                <option value="0">0.8</option>
+                <option value="1">1</option>
+                <option value="12">1.2</option>
+                <option value="15">1.5</option>
+                <option value="2">2</option>
+                <option value="25">2.5</option>
+            </select>
+        </form>
+    </aside>
+</main>
+
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/eb8debf0a8.js" crossorigin="anonymous"></script>
+</body>
+</html>

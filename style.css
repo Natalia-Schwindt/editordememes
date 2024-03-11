@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-fondo-background: rgb(48, 52, 63);
+    --color-fondo-nav: rgb(25, 30, 43);
+    --color-fondo-imagen: rgb(0, 0, 0);
+    --color-fondo-boton: rgb(46, 125, 50);
+    --color-fondo-barra-lateral: rgb(37, 41, 53);
+    --color-fondo-caja-texto: rgb(57, 62, 73);
+    --color-texto: white;
+}
+
+body {
+    background-color: var(--color-fondo-background);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-fondo-nav);
+    color: var(--color-texto);
+    width: 85%;
+    padding: 20px;
+}
+header h1{
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+ul li{
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-size: 18px;
+}
+
+header a i{
+    padding: 5px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 40px 0;
+}
+section div{
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main section div:nth-of-type(2n -1){
+    background-color: white;
+    margin: 25px;
+    font-size: 30px;
+    font-family: Impact;
+}
+
+main section div:nth-of-type(2n){
+    width: 100%;
+    height: 400px;
+    background-color: var(--color-fondo-imagen);
+}
+
+main button {
+    background-color: var(--color-fondo-boton);
+    color: var(--color-texto);
+    border: var(--color-fondo-boton);
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+ main button i{
+    padding: 5px;
+ }
+aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-fondo-barra-lateral);
+    color: var(--color-texto);
+    width: 15%;
+    height: 122%;
+}
+.barraLateral{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+aside h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+form h4{
+    margin: 10px auto;
+}
+.margenes{
+    margin: 10px auto;
+}
+aside button{
+    background-color: var(--color-fondo-caja-texto);
+    color: var(--color-texto); 
+}
