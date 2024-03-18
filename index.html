@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <title>Editor de Memes</title>
 </head>
+
 <body>
+
 <header>
     <h1>Generador de Memes</h1>
     <nav>
@@ -17,6 +19,7 @@
         </ul>
     </nav>
 </header>
+
 <main>
     <section>
         <div>
@@ -78,19 +81,20 @@
         </form>
         <button>Restablecer filtros</button>
     </aside>
-    <aside>
-        <h4>TEXTO</h4>
+
+    <aside class="barraLateral colorTexto">
+        <h3>TEXTO</h3>
         <form action="#">
             <label for="superior">SUPERIOR</label><br>
-            <input type="superior" placeholder="TOP TEXT">
+            <input class="colorFondo" name="superior" placeholder="TOP TEXT"><br>
             <input type="checkbox">
-            <label>Sin texto superior</label>
-            <label for="inferior">SUPERIOR</label><br>
-            <input type="inferior" placeholder="BOTTOM TEXT">
+            <label>Sin texto superior</label><br>
+            <label for="inferior">INFERIOR</label><br>
+            <input class="colorFondo" name="inferior" placeholder="BOTTOM TEXT"><br>
             <input type="checkbox">
-            <label>Sin texto inferior</label>
-            <label for="fuente">FUENTE</label>
-            <select>
+            <label>Sin texto inferior</label><br>
+            <label for="fuente">FUENTE</label><br>
+            <select class="colorFondo colorTexto">
                 <option value="arial">Arial</option>
                 <option value="arialblack">Arial Black</option>
                 <option value="americantypewriter">American Typewriter</option>
@@ -101,15 +105,19 @@
                 <option value="verdana">Verdana</option>
                 <option value="timesnewroman">Times New Roman</option>
             </select>
-            <input type="number" placeholder="40">
+            <input class="colorFondo" type="number" placeholder="40">
             <button><i class="fa-solid fa-align-left"></i></button>
             <button><i class="fa-solid fa-align-center"></i></button>
             <button><i class="fa-solid fa-align-right"></i></button>
-            <div>
-                <h4>COLOR</h4>
-                <input type="color">
-                <h4>FONDO</h4>
-                <input type="color">
+            <div class="contenedorSelectorColor">
+                <div class="selectorColor">
+                    <h4>COLOR</h4>
+                    <input type="color">
+                </div>
+                <div class="selectorColor">
+                    <h4>FONDO</h4>
+                    <input type="color">
+                </div>
             </div>
             <input type="checkbox">
             <label>Fondo transparente</label>
@@ -118,9 +126,9 @@
             <button>Claro</button>
             <button>Oscuro</button>
             <h4>ESPACIADO</h4>
-            <input type="number" placeholder="35">
+            <input class="colorFondo" type="number" placeholder="35">
             <H4>INTERLINEADO</H4>
-            <select>
+            <select class="colorFondo colorTexto">
                 <option value="0">0.8</option>
                 <option value="1">1</option>
                 <option value="12">1.2</option>
@@ -130,6 +138,7 @@
             </select>
         </form>
     </aside>
+
 </main>
 
     <script src="app.js"></script>
