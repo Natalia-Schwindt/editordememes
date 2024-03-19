@@ -5,25 +5,24 @@
 }
 
 :root{
-    --color-fondo-background: rgb(48, 52, 63);
+ 
+    --color-fondo-body-modo-claro: rgb(193, 201, 207);
+    --color-fondo-header-modo-claro: rgb(222, 223, 225);
+    --color-fondo-aside-modo-claro: rgb(170, 171, 175);
     --color-fondo-nav: rgb(25, 30, 43);
     --color-fondo-imagen: rgb(0, 0, 0);
     --color-fondo-boton: rgb(46, 125, 50);
     --color-fondo-barra-lateral: rgb(37, 41, 53);
     --color-fondo-caja-texto: rgb(57, 62, 73);
-    --color-texto: white;
+    --color-texto: rgb(252, 249, 249);
 }
-
-body {
-    background-color: var(--color-fondo-background);
-}
+ /*modo claro*/
 
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--color-fondo-nav);
-    color: var(--color-texto);
+    /* background-color: var(--color-fondo-header-modo-claro); */
     width: 85%;
     padding: 20px;
 }
@@ -39,15 +38,15 @@ nav ul{
 ul li{
     list-style: none;
 }
-
-header a {
-    text-decoration: none;
+ul button{
+    padding: 10px;
+    background-color: var(--color-fondo-nav);
     color: var(--color-texto);
-    font-size: 18px;
+    border: none;
+    border-radius: 5px;
 }
-
-header a i{
-    padding: 5px;
+ul button:hover{
+    background-color: rgba(117, 119, 126, 0.537);
 }
 
 /* Main */
@@ -69,6 +68,7 @@ main section div:nth-of-type(2n -1){
     margin: 25px;
     font-size: 30px;
     font-family: Impact;
+    color: black;
 }
 
 main section div:nth-of-type(2n){
@@ -92,10 +92,14 @@ aside {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--color-fondo-barra-lateral);
-    color: var(--color-texto);
     width: 15%;
     height: 122%;
+}
+#myAside{
+    display: none;
+}
+#miAside2{
+    display: none;
 }
 .barraLateral{
     display: flex;
@@ -107,6 +111,11 @@ aside {
 }
 input, select{
     margin: 10px 0;
+    padding: 5px;
+}
+.ancho{
+    width: 30%;
+    margin-right: 5px;
 }
 ::placeholder{
     color: white;

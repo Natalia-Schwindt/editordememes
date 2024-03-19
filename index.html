@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,13 @@
 
 <body>
 
-<header>
+<header id="miHeader">
     <h1>Generador de Memes</h1>
     <nav>
         <ul>
-            <li><a href=""><i class="fa-regular fa-file-image"></i>Imágen</a></li>
-            <li><a href=""><i class="fa-solid fa-font"></i>Texto</a></li>
-            <li><a href=""><i class="fa-regular fa-lightbulb"></i>Modo oscuro</a></li>
+            <li><button id="botonImagen"><i class="fa-regular fa-file-image"></i>Imágen</button></li>
+            <li><button id="botonTexto"><i class="fa-solid fa-font"></i>Texto</button></li>
+            <li><button id="botonModo"><i class="fa-regular fa-lightbulb"></i>Modo oscuro</button></li>
         </ul>
     </nav>
 </header>
@@ -36,7 +36,7 @@
         <button><i class="fa-solid fa-download"></i>Descargar meme</button>
     </section>
 
-    <aside class="barraLateral">
+    <aside class="barraLateral" id="myAside">
         <h3>IMÁGEN</h3>
         <form action="#">
             <label for="url">URL</label><br>
@@ -82,7 +82,7 @@
         <button>Restablecer filtros</button>
     </aside>
 
-    <aside class="barraLateral colorTexto">
+    <aside class="barraLateral" id="myAside2">
         <h3>TEXTO</h3>
         <form action="#">
             <label for="superior">SUPERIOR</label><br>
@@ -105,7 +105,7 @@
                 <option value="verdana">Verdana</option>
                 <option value="timesnewroman">Times New Roman</option>
             </select>
-            <input class="colorFondo" type="number" placeholder="40">
+            <input class="colorFondo ancho" type="number" placeholder="40">
             <button><i class="fa-solid fa-align-left"></i></button>
             <button><i class="fa-solid fa-align-center"></i></button>
             <button><i class="fa-solid fa-align-right"></i></button>
