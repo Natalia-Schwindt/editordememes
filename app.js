@@ -17,12 +17,12 @@ botonTexto.addEventListener("click", () => {
 
 let modoClaroOscuro = "Modo claro";
 botonModo.addEventListener("click", () => {
-    console.log(modoClaroOscuro);
     if (modoClaroOscuro === "Modo oscuro"){
         document.body.style.backgroundColor = "rgb(193, 201, 207)";
         document.body.style.color = "black";
         header.style.backgroundColor = "rgb(222, 223, 225)";
-        aside.style.backgroundColor = "rgb(170, 171, 175)";
+        aside.style.backgroundColor = "rgb(171, 172, 174)";
+        aside2.style.backgroundColor = "rgb(171, 172, 174)";
         botonModo.textContent = modoClaroOscuro;
         modoClaroOscuro = "Modo claro";
     } else if (modoClaroOscuro === "Modo claro") {
@@ -30,6 +30,7 @@ botonModo.addEventListener("click", () => {
         document.body.style.color = "rgb(252, 249, 249)";
         header.style.backgroundColor = "rgb(25, 30, 43)";
         aside.style.backgroundColor = "rgb(37, 41, 53)";
+        aside2.style.backgroundColor = "rgb(37, 41, 53)";
         botonModo.textContent = modoClaroOscuro;
         modoClaroOscuro = "Modo oscuro";
     }

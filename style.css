@@ -17,12 +17,16 @@
     --color-texto: rgb(252, 249, 249);
 }
  /*modo claro*/
+ body{
+    background-color: var(--color-fondo-body-modo-claro);
+    color: rgb(37, 41, 53);
+ }
 
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: var(--color-fondo-header-modo-claro); */
+    background-color: var(--color-fondo-header-modo-claro);
     width: 85%;
     padding: 20px;
 }
@@ -42,6 +46,7 @@ ul button{
     padding: 10px;
     background-color: var(--color-fondo-nav);
     color: var(--color-texto);
+    font-size: 14px;
     border: none;
     border-radius: 5px;
 }
@@ -95,20 +100,16 @@ aside {
     width: 15%;
     height: 122%;
 }
-#myAside{
-    display: none;
-}
-#miAside2{
-    display: none;
-}
+
 .barraLateral{
     display: flex;
     flex-direction: column;
     padding: 15px;
+    background-color: rgb(171, 172, 174);
 }
-.colorTexto{
+/* .colorTexto{
     color: rgb(255, 255, 255 );
-}
+} */
 input, select{
     margin: 10px 0;
     padding: 5px;
@@ -133,9 +134,9 @@ aside h3{
     width: 50%;
     padding: 10px;
 }
-.colorFondo{
+/* .colorFondo{
     background-color: rgb(57, 62, 73);
-}
+} */
 form h4{
     margin: 10px auto;
 }
