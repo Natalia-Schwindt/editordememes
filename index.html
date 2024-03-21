@@ -15,7 +15,7 @@
         <ul>
             <li><button id="botonImagen"><i class="fa-regular fa-file-image"></i>Imágen</button></li>
             <li><button id="botonTexto"><i class="fa-solid fa-font"></i>Texto</button></li>
-            <li><button id="botonModo"><i class="fa-regular fa-lightbulb"></i>Modo oscuro</button></li>
+            <li><button id="botonModo"><i class="fa-regular fa-lightbulb"></i><span id="icono">Modo oscuro</span></button></li>
         </ul>
     </nav>
 </header>
@@ -24,9 +24,9 @@
     <section>
         <div>
             <div>
-                <h2>TOP TEXT</h2>
+                <h2 id="textoSuperiorH2">TOP TEXT</h2>
             </div>
-            <div>
+            <div id="imageDiv">
 
             </div>
             <div>
@@ -40,7 +40,7 @@
         <h3>IMÁGEN</h3>
         <form action="#">
             <label for="url">URL</label><br>
-            <input type="url">
+            <input type="url" id="imageUrlInput">
             <h4>FONDO</h4>
             <input type="color">
             <select>
@@ -53,40 +53,40 @@
             </select>
             <h4>FILTROS</h4>
             <label for="brillo">Brillo</label><br>
-            <input class="margenes" type="range" id="brillo" min="1" max="10" step="1">
+            <input class="margenes" type="range" id="brillo" min="0" max="100" step="1">
             <br>
             <label for="opacidad">Opacidad</label><br>
-            <input class="margenes" type="range" id="opacidad" min="1" max="10" step="1">
+            <input class="margenes" type="range" id="opacidad" min="0" max="100" step="1">
             <br>
             <label for="contraste">Contraste</label><br>
-            <input class="margenes" type="range" id="contraste" min="1" max="10" step="1">
+            <input class="margenes" type="range" id="contraste" min="0" max="100" step="1">
             <br>
             <label for="desenfoque">Desenfoque</label><br>
-            <input class="margenes" type="range" id="desenfoque" min="1" max="10" step="1">
+            <input class="margenes" type="range" id="desenfoque" min="0" max="100" step="1">
             <br>
             <label for="escalaDeGrises">Escala De Grises</label><br>
-            <input class="margenes" type="range" id="escalaDeGrises" min="1" max="10" step="1">
+            <input class="margenes" type="range" id="escalaDeGrises" min="0" max="100" step="1">
             <br>
             <label for="sepia">Sepia</label><br>
-            <input class="margenes" type="range" id="sepia" min="1" max="10" step="1">
+            <input class="margenes" type="range" id="sepia" min="0" max="100" step="1">
             <br>
             <label for="hue">HUE</label><br>
-            <input class="margenes" type="range" id="hue" min="1" max="10" step="1">
+            <input class="margenes" type="range" id="hue" min="0" max="100" step="1">
             <br>
             <label for="saturado">Saturado</label><br>
-            <input class="margenes" type="range" id="saturado" min="1" max="10" step="1">
+            <input class="margenes" type="range" id="saturado" min="0" max="100" step="1">
             <br>
             <label for="negativo">Negativo</label><br>
-            <input class="margenes" type="range" id="negativo" min="1" max="10" step="1">
+            <input class="margenes" type="range" id="negativo" min="0" max="100" step="1">
         </form>
-        <button>Restablecer filtros</button>
+        <button id="botonRestablecerFiltros">Restablecer filtros</button>
     </aside>
 
     <aside class="barraLateral" id="myAside2">
         <h3>TEXTO</h3>
         <form action="#">
             <label for="superior">SUPERIOR</label><br>
-            <input name="superior" placeholder="TOP TEXT"><br>
+            <input name="superior" placeholder="TOP TEXT" id="textoSuperiorInput"><br>
             <input type="checkbox">
             <label>Sin texto superior</label><br>
             <label for="inferior">INFERIOR</label><br>
