@@ -51,8 +51,20 @@ function cargarImagen() {
     let imageUrl = document.getElementById('imageUrlInput').value;
     let imageDiv = document.getElementById('imageDiv');
     imageDiv.style.backgroundImage = "url('" + imageUrl + "')";
-    document.getElementById('imageUrlInput').value = "";
-}
+    // document.getElementById('imageUrlInput').value = "";
+};
+/*Color fondo imágen*/
+
+let imageDiv = document.getElementById('imageDiv');
+let colorFondoImagen = document.getElementById('colorFondoImagen');
+
+colorFondoImagen.addEventListener('change', () =>{
+    imageDiv.style.backgroundColor = colorFondoImagen.value;
+});
+
+
+/*Efecto fondo imágen*/
+
 
 /*Input Rango*/
 
@@ -130,3 +142,38 @@ negativo.addEventListener('change', function (event){
 
 /*Menú texto*/
 
+/*Input de entrada de texto*/
+const textoSuperiorInput = document.getElementById('textoSuperiorInput');
+const textoInferiorInput = document.getElementById('textoInferiorInput');
+const textoSuperiorH2 = document.getElementById('textoSuperiorH2');
+const textoInferiorH2 = document.getElementById('textoInferiorH2');
+
+textoSuperiorInput.addEventListener('input', () => {
+    textoSuperiorH2.textContent = this.value;
+});
+
+textoInferiorInput.addEventListener('input', () => {
+    textoInferiorH2.textContent = this.value;
+});
+
+/*Botones alinear texto*/
+const botonAlinearIzquierda = document.getElementById('botonAlinearIzquierda');
+const botonAlinearCentro = document.getElementById('botonAlinearCentro');
+const botonAlinearDerecha = document.getElementById('botonAlinearDerecha');
+
+const alinearTexto = (alinear) => {
+    if (alinear.target.id === 'botonAlinearIzquierda'){
+        textoSuperiorH2.style.textAlign  = 'flex-start';
+        textoInferiorH2.style.textAlign  = 'flex-start';
+    } else if (alinear.target.id === 'botonAlinearCentro'){
+        textoSuperiorH2.style.textAlign  = 'center';
+        textoInferiorH2.style.textAlign  = 'center';
+    }else if (alinear.target.id === 'botonAlinearDerecha'){
+        textoSuperiorH2.style.textAlign  = 'flex-end';
+        textoInferiorH2.style.textAlign  = 'flex-end';
+    }
+}
+
+botonAlinearIzquierda.addEventListener('click', alinearTexto);
+botonAlinearCentro.addEventListener('click', alinearTexto);
+botonAlinearDerecha.addEventListener('click', alinearTexto);
