@@ -39,16 +39,16 @@
     <aside class="barraLateral" id="myAside2">
         <h3>TEXTO</h3>
         <form action="#">
-            <label for="superior">SUPERIOR</label><br>
-            <input name="superior" placeholder="TOP TEXT" id="textoSuperiorInput"><br>
-            <input type="checkbox">
-            <label>Sin texto superior</label><br>
-            <label for="inferior">INFERIOR</label><br>
-            <input name="inferior" placeholder="BOTTOM TEXT" id="textoInferiorInput"><br>
-            <input type="checkbox">
-            <label>Sin texto inferior</label><br>
+            <label for="textoSuperiorInput">SUPERIOR</label><br>
+            <input name="textoSuperiorInput" placeholder="TOP TEXT" id="textoSuperiorInput"><br>
+            <input id="sinTextoSuperior" type="checkbox">
+            <label for="sinTextoSuperior">Sin texto superior</label><br>
+            <label for="textoInferiorInput">INFERIOR</label><br>
+            <input name="textoInferiorInput" placeholder="BOTTOM TEXT" id="textoInferiorInput"><br>
+            <input id="sinTextoInferior" type="checkbox">
+            <label for="sinTextoInferior">Sin texto inferior</label><br>
             <label for="fuente">FUENTE</label><br>
-            <select>
+            <select id="fuente" name="fuente">
                 <option value="arial">Arial</option>
                 <option value="arialblack">Arial Black</option>
                 <option value="americantypewriter">American Typewriter</option>
@@ -60,9 +60,9 @@
                 <option value="timesnewroman">Times New Roman</option>
             </select>
             <input class="ancho" type="number" placeholder="40">
-            <button id="botonAlinearIzquierda"><i class="fa-solid fa-align-left"></i></button>
-            <button id="botonAlinearCentro"><i class="fa-solid fa-align-center"></i></button>
-            <button id="botonAlinearDerecha"><i class="fa-solid fa-align-right"></i></button>
+            <button type="button" id="botonAlinearIzquierda"><i class="fa-solid fa-align-left"></i></button>
+            <button type="button" id="botonAlinearCentro"><i class="fa-solid fa-align-center"></i></button>
+            <button type="button" id="botonAlinearDerecha"><i class="fa-solid fa-align-right"></i></button>
             <div class="contenedorSelectorColor">
                 <div class="selectorColor">
                     <h4>COLOR</h4>
@@ -73,16 +73,16 @@
                     <input type="color">
                 </div>
             </div>
-            <input type="checkbox">
-            <label>Fondo transparente</label>
+            <input id="fondoTransparente" type="checkbox">
+            <label for="fondoTransparente">Fondo transparente</label>
             <h4>CONTORNO</h4>
             <button>Ninguno</button>
             <button>Claro</button>
             <button>Oscuro</button>
-            <h4>ESPACIADO</h4>
-            <input type="number" placeholder="35">
+            <h4>ESPACIADO</label>
+            <input id="espaciado" type="number" placeholder="35">
             <H4>INTERLINEADO</H4>
-            <select>
+            <select name="interliniado">
                 <option value="0">0.8</option>
                 <option value="1">1</option>
                 <option value="12">1.2</option>
@@ -96,11 +96,11 @@
     <aside class="barraLateral" id="myAside">
         <h3>IMÁGEN</h3>
         <form action="#">
-            <label for="url">URL</label><br>
-            <input type="url" id="imageUrlInput">
+            <label for="imageUrlInput">URL</label><br>
+            <input type="url" id="imageUrlInput" name="imageUrlInput">
             <h4>FONDO</h4>
             <input type="color" id="colorFondoImagen">
-            <select>
+            <select name="efectoFondoImagen">
                 <option value="ninguno">Ninguno</option>
                 <option value="aclarar">Aclarar</option>
                 <option value="oscurecer">Oscurecer</option>

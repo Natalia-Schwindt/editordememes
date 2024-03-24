@@ -1,4 +1,4 @@
-/*Modo claro/oscuro y aside*/
+/*Modo claro/oscuro y cambio de aside*/
 const botonImagen = document.getElementById('botonImagen');
 const botonTexto = document.getElementById('botonTexto');
 const botonModo = document.getElementById('botonModo');
@@ -39,7 +39,6 @@ botonModo.addEventListener("click", () => {
 })
 
 /*Menú imágen*/
-
 /*Agregar imágen con Url*/
 document.getElementById('imageUrlInput').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
@@ -67,7 +66,6 @@ colorFondoImagen.addEventListener('change', () =>{
 
 
 /*Input Rango*/
-
 /*Brillo*/
 const brillo = document.getElementById('brillo');
 
@@ -149,11 +147,11 @@ const textoSuperiorH2 = document.getElementById('textoSuperiorH2');
 const textoInferiorH2 = document.getElementById('textoInferiorH2');
 
 textoSuperiorInput.addEventListener('input', () => {
-    textoSuperiorH2.textContent = this.value;
+    textoSuperiorH2.textContent = textoSuperiorInput.value;
 });
 
 textoInferiorInput.addEventListener('input', () => {
-    textoInferiorH2.textContent = this.value;
+    textoInferiorH2.textContent = textoInferiorInput.value;
 });
 
 /*Botones alinear texto*/
@@ -162,15 +160,16 @@ const botonAlinearCentro = document.getElementById('botonAlinearCentro');
 const botonAlinearDerecha = document.getElementById('botonAlinearDerecha');
 
 const alinearTexto = (alinear) => {
+    console.log(alinear.target);
     if (alinear.target.id === 'botonAlinearIzquierda'){
-        textoSuperiorH2.style.textAlign  = 'flex-start';
-        textoInferiorH2.style.textAlign  = 'flex-start';
+        textoSuperiorH2.style.textAlign = 'left';
+        textoInferiorH2.style.textAlign = 'left';
     } else if (alinear.target.id === 'botonAlinearCentro'){
-        textoSuperiorH2.style.textAlign  = 'center';
-        textoInferiorH2.style.textAlign  = 'center';
-    }else if (alinear.target.id === 'botonAlinearDerecha'){
-        textoSuperiorH2.style.textAlign  = 'flex-end';
-        textoInferiorH2.style.textAlign  = 'flex-end';
+        textoSuperiorH2.style.textAlign = 'center';
+        textoInferiorH2.style.textAlign = 'center';
+    } else if (alinear.target.id === 'botonAlinearDerecha'){
+        textoSuperiorH2.style.textAlign = 'right';
+        textoInferiorH2.style.textAlign = 'right';
     }
 }
 

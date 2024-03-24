@@ -107,9 +107,6 @@ aside {
     padding: 15px;
     background-color: rgb(171, 172, 174);
 }
-/* .colorTexto{
-    color: rgb(255, 255, 255 );
-} */
 input, select{
     margin: 10px 0;
     padding: 5px;
@@ -134,9 +131,6 @@ aside h3{
     width: 50%;
     padding: 10px;
 }
-/* .colorFondo{
-    background-color: rgb(57, 62, 73);
-} */
 form h4{
     margin: 10px auto;
 }
