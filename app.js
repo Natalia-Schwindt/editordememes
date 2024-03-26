@@ -68,75 +68,57 @@ colorFondoImagen.addEventListener('change', () =>{
 /*Input Rango*/
 /*Brillo*/
 const brillo = document.getElementById('brillo');
-
-brillo.addEventListener('change', function (event){
-    let imageDiv = document.getElementById('imageDiv');
-    imageDiv.style.filter=`brightness(${event.target.value}%)`
-});
-
-/*Opacidad*/
 const opacidad = document.getElementById('opacidad');
-
-opacidad.addEventListener('change', function (event){
-    let imageDiv = document.getElementById('imageDiv');
-    imageDiv.style.filter=`opacity(${event.target.value}%)`
-});
-
-/*Contraste*/
 const contraste = document.getElementById('contraste');
-
-contraste.addEventListener('change', function (event){
-    let imageDiv = document.getElementById('imageDiv');
-    imageDiv.style.filter=`contrast(${event.target.value}%)`
-});
-
-/*Desenfoque*/
 const desenfoque = document.getElementById('desenfoque');
-
-desenfoque.addEventListener('change', function (event){
-    let imageDiv = document.getElementById('imageDiv');
-    imageDiv.style.filter=`blur(${event.target.value}px)`
-});
-
-/*Escala De Grises*/
 const escalaDeGrises = document.getElementById('escalaDeGrises');
-
-escalaDeGrises.addEventListener('change', function (event){
-    let imageDiv = document.getElementById('imageDiv');
-    imageDiv.style.filter=`grayscale(${event.target.value}%)`
-});
-
-/*Sepia*/
 const sepia = document.getElementById('sepia');
-
-sepia.addEventListener('change', function (event){
-    let imageDiv = document.getElementById('imageDiv');
-    imageDiv.style.filter=`sepia(${event.target.value}%)`
-});
-
-/*HUE*/
 const hue = document.getElementById('hue');
-
-hue.addEventListener('change', function (event){
-    let imageDiv = document.getElementById('imageDiv');
-    imageDiv.style.filter=`hue-rotate(${event.target.value}deg)`
-});
-
-/*Saturado*/
 const saturado = document.getElementById('saturado');
-
-saturado.addEventListener('change', function (event){
-    let imageDiv = document.getElementById('imageDiv');
-    imageDiv.style.filter=`saturate(${event.target.value}%)`
-});
-
-/*Negativo*/
 const negativo = document.getElementById('negativo');
 
-negativo.addEventListener('change', function (event){
-    let imageDiv = document.getElementById('imageDiv');
-    imageDiv.style.filter=`invert(${event.target.value}%)`
-});
+brillo.addEventListener('change', aplicarFiltros);
+opacidad.addEventListener('change', aplicarFiltros);
+contraste.addEventListener('change', aplicarFiltros);
+desenfoque.addEventListener('change', aplicarFiltros);
+escalaDeGrises.addEventListener('change', aplicarFiltros);
+sepia.addEventListener('change', aplicarFiltros);
+hue.addEventListener('change', aplicarFiltros);
+saturado.addEventListener('change', aplicarFiltros);
+negativo.addEventListener('change', aplicarFiltros);
+
+function aplicarFiltros(){
+    let filtroString ='';
+
+    if (brillo.value !== '100'){
+    filtroString += `brightness(${brillo.value}%) `;
+}
+if (opacidad.value !== '100'){
+    filtroString += `opacity(${opacidad.value}%) `;
+}
+if (contraste.value !== '100'){
+    filtroString += `contrast(${contraste.value}%) `;
+}
+if (desenfoque.value !== '0'){
+    filtroString += `blur(${desenfoque.value}px) `;
+}
+if (escalaDeGrises.value !== '0'){
+    filtroString += `grayscale(${escalaDeGrises.value}%) `;
+}
+if (sepia.value !== '0'){
+    filtroString += `sepia(${sepia.value}%) `;
+}
+if (hue.value !== '0'){
+    filtroString += `hue-rotate(${hue.value}deg) `;
+}
+if (saturado.value !== '100'){
+    filtroString += `saturate(${saturado.value}%) `;
+}
+if (negativo.value !== '100'){
+    filtroString += `invert(${negativo.value}%) `;
+}
+    imageDiv.style.filter = filtroString.trim();
+}
 
 /*Menú texto*/
 
@@ -154,25 +136,71 @@ textoInferiorInput.addEventListener('input', () => {
     textoInferiorH2.textContent = textoInferiorInput.value;
 });
 
+/*checkbox superior e inferior*/
+const sinTextoSuperior = document.getElementById('sinTextoSuperior');
+const sinTextoInferior = document.getElementById('sinTextoInferior');
+
+sinTextoSuperior.addEventListener('click', () => {
+    if (sinTextoSuperior.checked){
+        textoSuperiorH2.style.display = "none";
+    } else {
+        textoSuperiorH2.style.display = "block";
+    }
+});
+
+sinTextoInferior.addEventListener('click', () => {
+    if (sinTextoInferior.checked){
+        textoInferiorH2.style.display = "none";
+    } else {
+        textoInferiorH2.style.display = "block";
+    }
+});
+
+/*checkbox fonfo transparente*/
+const fondoTransparente = document.getElementById('fondoTransparente');
+const fondo = document.getElementById('fondo');
+
+fondoTransparente.addEventListener('click', () => {
+    console.log(fondoTransparente.checked)
+    if (fondoTransparente.checked){
+        fondo.style.backgroundColor = "rgba(255,255,255,0)";
+    } else {
+        fondo.style.backgroundColor = "rgb(255, 255, 255)";
+    }
+});
+
 /*Botones alinear texto*/
 const botonAlinearIzquierda = document.getElementById('botonAlinearIzquierda');
 const botonAlinearCentro = document.getElementById('botonAlinearCentro');
 const botonAlinearDerecha = document.getElementById('botonAlinearDerecha');
 
 const alinearTexto = (alinear) => {
-    console.log(alinear.target);
+    console.log(alinear);
     if (alinear.target.id === 'botonAlinearIzquierda'){
-        textoSuperiorH2.style.textAlign = 'left';
-        textoInferiorH2.style.textAlign = 'left';
+        console.log('hola')
+        fondo.style.alignItems = 'start';
+        fondo.style.alignItems = 'start';
     } else if (alinear.target.id === 'botonAlinearCentro'){
-        textoSuperiorH2.style.textAlign = 'center';
-        textoInferiorH2.style.textAlign = 'center';
+        fondo.style.alignItems = 'center';
+        fondo.style.alignItems = 'center';
     } else if (alinear.target.id === 'botonAlinearDerecha'){
-        textoSuperiorH2.style.textAlign = 'right';
-        textoInferiorH2.style.textAlign = 'right';
+        fondo.style.alignItems = 'end';
+        fondo.style.alignItems = 'end';
     }
 }
 
-botonAlinearIzquierda.addEventListener('click', alinearTexto);
-botonAlinearCentro.addEventListener('click', alinearTexto);
-botonAlinearDerecha.addEventListener('click', alinearTexto);
+botonAlinearIzquierda.addEventListener('click', (event)=>alinearTexto(event));
+botonAlinearCentro.addEventListener('click', (event)=>alinearTexto(event));
+botonAlinearDerecha.addEventListener('click', (event)=>alinearTexto(event));
+
+const menuFuente = document.getElementById('fuente');
+const arial = document.getElementById('arial');
+const arialblack = document.getElementById('arialblack');
+const americantypewriter = document.getElementById('americantypewriter');
+const andalemono = document.getElementById('andalemono');
+const comicsanMs = document.getElementById('comicsanMs');
+const helvetica = document.getElementById('helvetica');
+const impact = document.getElementById('impact');
+const verdana = document.getElementById('verdana');
+const timesnewroman = document.getElementById('timesnewroman');
+

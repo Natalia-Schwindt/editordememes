@@ -22,16 +22,19 @@
 
 <main>
     <section>
-        <div>
+        <div id="fondo">
             <div>
                 <h2 id="textoSuperiorH2">TOP TEXT</h2>
             </div>
+                
             <div id="imageDiv">
 
             </div>
+            
             <div>
                 <h2 id="textoInferiorH2">BOTTOM TEXT</h2>
             </div>
+            
         </div>
         <button><i class="fa-solid fa-download"></i>Descargar meme</button>
     </section>
@@ -41,28 +44,32 @@
         <form action="#">
             <label for="textoSuperiorInput">SUPERIOR</label><br>
             <input name="textoSuperiorInput" placeholder="TOP TEXT" id="textoSuperiorInput"><br>
+
             <input id="sinTextoSuperior" type="checkbox">
             <label for="sinTextoSuperior">Sin texto superior</label><br>
+
             <label for="textoInferiorInput">INFERIOR</label><br>
             <input name="textoInferiorInput" placeholder="BOTTOM TEXT" id="textoInferiorInput"><br>
+
             <input id="sinTextoInferior" type="checkbox">
             <label for="sinTextoInferior">Sin texto inferior</label><br>
+
             <label for="fuente">FUENTE</label><br>
             <select id="fuente" name="fuente">
-                <option value="arial">Arial</option>
-                <option value="arialblack">Arial Black</option>
-                <option value="americantypewriter">American Typewriter</option>
-                <option value="andalemono">Andale Mono</option>
-                <option value="comicsan ms">Comic Sans MS</option>
-                <option value="helvetica">Helvetica</option>
-                <option value="impact">Impact</option>
-                <option value="verdana">Verdana</option>
-                <option value="timesnewroman">Times New Roman</option>
+                <option id="arial" value="arial">Arial</option>
+                <option id="arialblack" value="arialblack">Arial Black</option>
+                <option id="americantypewriter" value="americantypewriter">American Typewriter</option>
+                <option id="andalemono" value="andalemono">Andale Mono</option>
+                <option id="comicsanMs" value="comicsanMs">Comic Sans MS</option>
+                <option id="helvetica" value="helvetica">Helvetica</option>
+                <option id="impact" value="impact">Impact</option>
+                <option id="verdana" value="verdana">Verdana</option>
+                <option id="timesnewroman" value="timesnewroman">Times New Roman</option>
             </select>
             <input class="ancho" type="number" placeholder="40">
-            <button type="button" id="botonAlinearIzquierda"><i class="fa-solid fa-align-left"></i></button>
-            <button type="button" id="botonAlinearCentro"><i class="fa-solid fa-align-center"></i></button>
-            <button type="button" id="botonAlinearDerecha"><i class="fa-solid fa-align-right"></i></button>
+            <button type="button" id="botonAlinearIzquierda"><i id="botonAlinearIzquierda" class="fa-solid fa-align-left"></i></button>
+            <button type="button" id="botonAlinearCentro"><i id="botonAlinearCentro" class="fa-solid fa-align-center"></i></button>
+            <button type="button" id="botonAlinearDerecha"><i id="botonAlinearDerecha" class="fa-solid fa-align-right"></i></button>
             <div class="contenedorSelectorColor">
                 <div class="selectorColor">
                     <h4>COLOR</h4>
@@ -73,12 +80,14 @@
                     <input type="color">
                 </div>
             </div>
+
             <input id="fondoTransparente" type="checkbox">
             <label for="fondoTransparente">Fondo transparente</label>
+
             <h4>CONTORNO</h4>
-            <button>Ninguno</button>
-            <button>Claro</button>
-            <button>Oscuro</button>
+            <button type="button">Ninguno</button>
+            <button type="button">Claro</button>
+            <button type="button">Oscuro</button>
             <h4>ESPACIADO</label>
             <input id="espaciado" type="number" placeholder="35">
             <H4>INTERLINEADO</H4>
