@@ -50,10 +50,9 @@ function cargarImagen() {
     let imageUrl = document.getElementById('imageUrlInput').value;
     let imageDiv = document.getElementById('imageDiv');
     imageDiv.style.backgroundImage = "url('" + imageUrl + "')";
-    // document.getElementById('imageUrlInput').value = "";
 };
-/*Color fondo imágen*/
 
+/*Color fondo imágen*/
 let imageDiv = document.getElementById('imageDiv');
 let colorFondoImagen = document.getElementById('colorFondoImagen');
 
@@ -63,7 +62,6 @@ colorFondoImagen.addEventListener('change', () =>{
 
 
 /*Efecto fondo imágen*/
-
 
 /*Input Rango*/
 /*Brillo*/
@@ -161,7 +159,6 @@ const fondoTransparente = document.getElementById('fondoTransparente');
 const fondo = document.getElementById('fondo');
 
 fondoTransparente.addEventListener('click', () => {
-    console.log(fondoTransparente.checked)
     if (fondoTransparente.checked){
         fondo.style.backgroundColor = "rgba(255,255,255,0)";
     } else {
@@ -175,9 +172,7 @@ const botonAlinearCentro = document.getElementById('botonAlinearCentro');
 const botonAlinearDerecha = document.getElementById('botonAlinearDerecha');
 
 const alinearTexto = (alinear) => {
-    console.log(alinear);
     if (alinear.target.id === 'botonAlinearIzquierda'){
-        console.log('hola')
         fondo.style.alignItems = 'start';
         fondo.style.alignItems = 'start';
     } else if (alinear.target.id === 'botonAlinearCentro'){
@@ -193,14 +188,139 @@ botonAlinearIzquierda.addEventListener('click', (event)=>alinearTexto(event));
 botonAlinearCentro.addEventListener('click', (event)=>alinearTexto(event));
 botonAlinearDerecha.addEventListener('click', (event)=>alinearTexto(event));
 
+/*Menú cambiar fuente*/
 const menuFuente = document.getElementById('fuente');
 const arial = document.getElementById('arial');
 const arialblack = document.getElementById('arialblack');
 const americantypewriter = document.getElementById('americantypewriter');
 const andalemono = document.getElementById('andalemono');
-const comicsanMs = document.getElementById('comicsanMs');
+const comicsanMs = document.getElementById('comicsansMs');
 const helvetica = document.getElementById('helvetica');
 const impact = document.getElementById('impact');
 const verdana = document.getElementById('verdana');
 const timesnewroman = document.getElementById('timesnewroman');
 
+menuFuente.addEventListener('change', () => {
+    cambiarFuente(menuFuente);
+});
+
+const cambiarFuente = (menuFuente) => {
+    if (menuFuente.value === 'arial'){
+        textoSuperiorH2.style.fontFamily = 'arial';
+        textoInferiorH2.style.fontFamily = 'arial';
+    }
+    if (menuFuente.value === 'arialblack'){
+        textoSuperiorH2.style.fontFamily = 'arial black';
+        textoInferiorH2.style.fontFamily = 'arial black';
+    }
+    if (menuFuente.value === 'americantypewriter'){
+        textoSuperiorH2.style.fontFamily = 'american typewriter';
+        textoInferiorH2.style.fontFamily = 'american typewriter';
+    }
+    if (menuFuente.value === 'andalemono'){
+        textoSuperiorH2.style.fontFamily = 'andale mono';
+        textoInferiorH2.style.fontFamily = 'andale mono';
+    }
+    if (menuFuente.value === 'comicsansMs'){
+        textoSuperiorH2.style.fontFamily = 'comic sans Ms';
+        textoInferiorH2.style.fontFamily = 'comic sans Ms';
+    }
+    if (menuFuente.value === 'helvetica'){
+        textoSuperiorH2.style.fontFamily = 'helvetica';
+        textoInferiorH2.style.fontFamily = 'helvetica';
+    }
+    if (menuFuente.value === 'impact'){
+        textoSuperiorH2.style.fontFamily = 'impact';
+        textoInferiorH2.style.fontFamily = 'impact';
+    }
+    if (menuFuente.value === 'verdana'){
+        textoSuperiorH2.style.fontFamily = 'verdana';
+        textoInferiorH2.style.fontFamily = 'verdana';
+    }
+    if (menuFuente.value === 'timesnewroman'){
+        textoSuperiorH2.style.fontFamily = 'times new roman';
+        textoInferiorH2.style.fontFamily = 'times new roman';
+    }
+}
+
+/*Cambiar tamaño de fuente*/
+const tamanioFuente = document.getElementById('tamanioFuente');
+
+tamanioFuente.addEventListener('change', () =>{
+    textoSuperiorH2.style.fontSize = tamanioFuente.value + 'px';
+    textoInferiorH2.style.fontSize = tamanioFuente.value + 'px';
+});
+
+/*Menú cambiar color fondo imágen*/
+const efectoFondoImagen = document.getElementById('efectoFondoImagen');
+const ninguno = document.getElementById('ninguno');
+const aclarar = document.getElementById('aclarar');
+const oscurecer = document.getElementById('ocurecer');
+const diferencia = document.getElementById('diferencia');
+const luminosidad = document.getElementById('luminosidad');
+const multiplicar = document.getElementById('multiplicar');
+
+efectoFondoImagen.addEventListener('change', () => {
+    modificarColor(efectoFondoImagen);
+});
+
+const modificarColor = (efectoFondoImagen) => {
+    if (efectoFondoImagen.value === 'ninguno'){
+        imageDiv.style.backgroundBlendMode = 'normal';
+    }
+    if (efectoFondoImagen.value === 'aclarar'){
+        imageDiv.style.backgroundBlendMode = 'lighten';
+    }
+    if (efectoFondoImagen.value === 'ocurecer'){
+        imageDiv.style.backgroundBlendMode = 'darken';
+    }
+    if (efectoFondoImagen.value === 'diferencia'){
+        imageDiv.style.backgroundBlendMode = 'difference';
+    }
+    if (efectoFondoImagen.value === 'luminosidad'){
+        imageDiv.style.backgroundBlendMode = 'luminosity';
+    }
+    if (efectoFondoImagen.value === 'multiplicar'){
+        imageDiv.style.backgroundBlendMode = 'multiply';
+    }
+}
+
+/*Menú desplegable interliniado*/
+const interliniado = document.getElementById('interliniado');
+const ceroPuntoOcho = document.getElementById('ceroPuntoOcho');
+const uno = document.getElementById('uno');
+const unoPuntoDos = document.getElementById('unoPuntoDos');
+const unoPuntoCinco = document.getElementById('unoPuntoCinco');
+const dos = document.getElementById('dos');
+const dosPuntoCinco = document.getElementById('dosPuntoCinco');
+
+interliniado.addEventListener('change', () => {
+    cambiarInterliniado(interliniado);
+});
+
+const cambiarInterliniado = (interliniado) => {
+    if (interliniado.value === 'ceroPuntoOcho'){
+        textoSuperiorH2.style.lineHeight  = '0.8';
+        textoInferiorH2.style.lineHeight  = '0.8';
+    }
+    if (interliniado.value === 'uno'){
+        textoSuperiorH2.style.lineHeight  = '1';
+        textoInferiorH2.style.lineHeight  = '1';
+    }
+    if (interliniado.value === 'unoPuntoDos'){
+        textoSuperiorH2.style.lineHeight  = '1.2';
+        textoInferiorH2.style.lineHeight  = '1.2';
+    }
+    if (interliniado.value === 'unoPuntoCinco'){
+        textoSuperiorH2.style.lineHeight  = '1.5';
+        textoInferiorH2.style.lineHeight  = '1.5';
+    }
+    if (interliniado.value === 'dos'){
+        textoSuperiorH2.style.lineHeight  = '2';
+        textoInferiorH2.style.lineHeight  = '2';
+    }
+    if (interliniado.value === 'dosPuntoCinco'){
+        textoSuperiorH2.style.lineHeight  = '2.5';
+        textoInferiorH2.style.lineHeight  = '2.5';
+    }
+}

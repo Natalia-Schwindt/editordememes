@@ -60,16 +60,19 @@
                 <option id="arialblack" value="arialblack">Arial Black</option>
                 <option id="americantypewriter" value="americantypewriter">American Typewriter</option>
                 <option id="andalemono" value="andalemono">Andale Mono</option>
-                <option id="comicsanMs" value="comicsanMs">Comic Sans MS</option>
+                <option id="comicsansMs" value="comicsansMs">Comic Sans MS</option>
                 <option id="helvetica" value="helvetica">Helvetica</option>
                 <option id="impact" value="impact">Impact</option>
                 <option id="verdana" value="verdana">Verdana</option>
                 <option id="timesnewroman" value="timesnewroman">Times New Roman</option>
             </select>
-            <input class="ancho" type="number" placeholder="40">
+
+            <input id="tamanioFuente" class="ancho" type="number" placeholder="40">
+
             <button type="button" id="botonAlinearIzquierda"><i id="botonAlinearIzquierda" class="fa-solid fa-align-left"></i></button>
             <button type="button" id="botonAlinearCentro"><i id="botonAlinearCentro" class="fa-solid fa-align-center"></i></button>
             <button type="button" id="botonAlinearDerecha"><i id="botonAlinearDerecha" class="fa-solid fa-align-right"></i></button>
+            
             <div class="contenedorSelectorColor">
                 <div class="selectorColor">
                     <h4>COLOR</h4>
@@ -88,16 +91,18 @@
             <button type="button">Ninguno</button>
             <button type="button">Claro</button>
             <button type="button">Oscuro</button>
+
             <h4>ESPACIADO</label>
             <input id="espaciado" type="number" placeholder="35">
+
             <H4>INTERLINEADO</H4>
-            <select name="interliniado">
-                <option value="0">0.8</option>
-                <option value="1">1</option>
-                <option value="12">1.2</option>
-                <option value="15">1.5</option>
-                <option value="2">2</option>
-                <option value="25">2.5</option>
+            <select id="interliniado" name="interliniado">
+                <option id="ceroPuntoOcho" value="0">0.8</option>
+                <option id="uno" value="1">1</option>
+                <option id="unoPuntoDos" value="12">1.2</option>
+                <option id="unoPuntoCinco" value="15">1.5</option>
+                <option id="dos" value="2">2</option>
+                <option id="dosPuntoCinco" value="25">2.5</option>
             </select>
         </form>
     </aside>
@@ -109,13 +114,13 @@
             <input type="url" id="imageUrlInput" name="imageUrlInput">
             <h4>FONDO</h4>
             <input type="color" id="colorFondoImagen">
-            <select name="efectoFondoImagen">
-                <option value="ninguno">Ninguno</option>
-                <option value="aclarar">Aclarar</option>
-                <option value="oscurecer">Oscurecer</option>
-                <option value="diferencia">Diferencia</option>
-                <option value="luminosidad">Luminosidad</option>
-                <option value="multiplicar">Multiplicar</option>
+            <select id="efectoFondoImagen" name="efectoFondoImagen">
+                <option id="ninguno" value="ninguno">Ninguno</option>
+                <option id="aclarar" value="aclarar">Aclarar</option>
+                <option id="oscurecer" value="oscurecer">Oscurecer</option>
+                <option id="diferencia" value="diferencia">Diferencia</option>
+                <option id="luminosidad" value="luminosidad">Luminosidad</option>
+                <option id="multiplicar" value="multiplicar">Multiplicar</option>
             </select>
             <h4>FILTROS</h4>
             <label for="brillo">Brillo</label><br>
