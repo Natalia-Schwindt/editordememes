@@ -53,18 +53,50 @@ function cargarImagen() {
 };
 
 /*Color fondo imágen*/
-let imageDiv = document.getElementById('imageDiv');
-let colorFondoImagen = document.getElementById('colorFondoImagen');
+const imageDiv = document.getElementById('imageDiv');
+const colorFondoImagen = document.getElementById('colorFondoImagen');
 
 colorFondoImagen.addEventListener('change', () =>{
     imageDiv.style.backgroundColor = colorFondoImagen.value;
 });
 
+/*Menú cambiar color fondo imágen*/
+const efectoFondoImagen = document.getElementById('efectoFondoImagen');
+const ninguno = document.getElementById('ninguno');
+const aclarar = document.getElementById('aclarar');
+const oscurecer = document.getElementById('ocurecer');
+const diferencia = document.getElementById('diferencia');
+const luminosidad = document.getElementById('luminosidad');
+const multiplicar = document.getElementById('multiplicar');
+
+efectoFondoImagen.addEventListener('change', () => {
+    modificarColor(efectoFondoImagen);
+});
+
+const modificarColor = (efectoFondoImagen) => {
+    if (efectoFondoImagen.value === 'ninguno'){
+        imageDiv.style.backgroundBlendMode = 'normal';
+    }
+    if (efectoFondoImagen.value === 'aclarar'){
+        imageDiv.style.backgroundBlendMode = 'lighten';
+    }
+    if (efectoFondoImagen.value === 'oscurecer'){
+        imageDiv.style.backgroundBlendMode = 'darken';
+    }
+    if (efectoFondoImagen.value === 'diferencia'){
+        imageDiv.style.backgroundBlendMode = 'difference';
+    }
+    if (efectoFondoImagen.value === 'luminosidad'){
+        imageDiv.style.backgroundBlendMode = 'luminosity';
+    }
+    if (efectoFondoImagen.value === 'multiplicar'){
+        imageDiv.style.backgroundBlendMode = 'multiply';
+    }
+}
 
 /*Efecto fondo imágen*/
 
 /*Input Rango*/
-/*Brillo*/
 const brillo = document.getElementById('brillo');
 const opacidad = document.getElementById('opacidad');
 const contraste = document.getElementById('contraste');
@@ -118,6 +150,16 @@ if (negativo.value !== '100'){
     imageDiv.style.filter = filtroString.trim();
 }
 
+/*Botón descargar meme*/
+//  document.getElementById('btnDownload').addEventListener('click', async function() {
+//     console.log('Botón de descarga clicado');
+//     const canvas = await html2canvas(document.getElementById('fondo'));
+//     let a = document.createElement('a');
+//     a.download = 'captured.png';
+//     a.href = canvas.toDataURL('image/png');
+//     a.click();
+// });
+
 /*Menú texto*/
 
 /*Input de entrada de texto*/
@@ -153,6 +195,23 @@ sinTextoInferior.addEventListener('click', () => {
         textoInferiorH2.style.display = "block";
     }
 });
+
+/*cambiar color del texto*/
+const colorTexto = document.getElementById('colorTexto');
+
+colorTexto.addEventListener('change', () => {
+    textoSuperiorH2.style.color = colorTexto.value;
+    textoInferiorH2.style.color = colorTexto.value;
+})
+
+/*cambiar color del fondo texto*/
+const colorFondoTexto = document.getElementById('colorFondoTexto'); //captura el input del color de fondo del texto
+
+colorFondoTexto.addEventListener('change', () => {
+    fondo.style.backgroundColor = colorFondoTexto.value;
+    textoSuperiorH2.style.backgroundColor = colorFondoTexto.value;
+    textoInferiorH2.style.backgroundColor = colorFondoTexto.value;
+})
 
 /*checkbox fonfo transparente*/
 const fondoTransparente = document.getElementById('fondoTransparente');
@@ -222,8 +281,8 @@ const cambiarFuente = (menuFuente) => {
         textoInferiorH2.style.fontFamily = 'andale mono';
     }
     if (menuFuente.value === 'comicsansMs'){
-        textoSuperiorH2.style.fontFamily = 'comic sans Ms';
-        textoInferiorH2.style.fontFamily = 'comic sans Ms';
+        textoSuperiorH2.style.fontFamily = 'comic sans ms';
+        textoInferiorH2.style.fontFamily = 'comic sans ms';
     }
     if (menuFuente.value === 'helvetica'){
         textoSuperiorH2.style.fontFamily = 'helvetica';
@@ -251,41 +310,15 @@ tamanioFuente.addEventListener('change', () =>{
     textoInferiorH2.style.fontSize = tamanioFuente.value + 'px';
 });
 
-/*Menú cambiar color fondo imágen*/
-const efectoFondoImagen = document.getElementById('efectoFondoImagen');
-const ninguno = document.getElementById('ninguno');
-const aclarar = document.getElementById('aclarar');
-const oscurecer = document.getElementById('ocurecer');
-const diferencia = document.getElementById('diferencia');
-const luminosidad = document.getElementById('luminosidad');
-const multiplicar = document.getElementById('multiplicar');
+/*Menú texto espaciado*/
+const espaciado = document.getElementById('espaciado');
 
-efectoFondoImagen.addEventListener('change', () => {
-    modificarColor(efectoFondoImagen);
+espaciado.addEventListener('change', () => {
+    textoSuperiorH2.style.letterSpacing = espaciado.value + 'px';
+    textoInferiorH2.style.letterSpacing = espaciado.value + 'px';
 });
 
-const modificarColor = (efectoFondoImagen) => {
-    if (efectoFondoImagen.value === 'ninguno'){
-        imageDiv.style.backgroundBlendMode = 'normal';
-    }
-    if (efectoFondoImagen.value === 'aclarar'){
-        imageDiv.style.backgroundBlendMode = 'lighten';
-    }
-    if (efectoFondoImagen.value === 'ocurecer'){
-        imageDiv.style.backgroundBlendMode = 'darken';
-    }
-    if (efectoFondoImagen.value === 'diferencia'){
-        imageDiv.style.backgroundBlendMode = 'difference';
-    }
-    if (efectoFondoImagen.value === 'luminosidad'){
-        imageDiv.style.backgroundBlendMode = 'luminosity';
-    }
-    if (efectoFondoImagen.value === 'multiplicar'){
-        imageDiv.style.backgroundBlendMode = 'multiply';
-    }
-}
-
-/*Menú desplegable interliniado*/
+// /*Menú texto interliniado*/ (revisar)
 const interliniado = document.getElementById('interliniado');
 const ceroPuntoOcho = document.getElementById('ceroPuntoOcho');
 const uno = document.getElementById('uno');

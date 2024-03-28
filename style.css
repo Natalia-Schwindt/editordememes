@@ -62,24 +62,25 @@ section {
     width: 90%;
     margin: 40px 0;
 }
-section div{
-    width: 38%;
+
+#fondo{
+    width: 35%;
+    margin-bottom: 20px;
+}
+
+#fondo h2{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-main section div:nth-of-type(2n -1){
     background-color: white;
-    margin: 25px;
-    font-size: 30px;
+    padding: 30px;
+    font-size: 40px;
     font-family: Impact;
-    color: black;
 }
 
-main section div:nth-of-type(2n){
-    width: 100%;
+#imageDiv{
     height: 400px;
-    background-color: var(--color-fondo-imagen);
+    background-color: black;
 }
 
 main button {

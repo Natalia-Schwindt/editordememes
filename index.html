@@ -23,20 +23,20 @@
 <main>
     <section>
         <div id="fondo">
-            <div>
+            
                 <h2 id="textoSuperiorH2">TOP TEXT</h2>
-            </div>
+            
                 
             <div id="imageDiv">
 
             </div>
             
-            <div>
+           
                 <h2 id="textoInferiorH2">BOTTOM TEXT</h2>
-            </div>
+            
             
         </div>
-        <button><i class="fa-solid fa-download"></i>Descargar meme</button>
+        <button id="btnDownload"><i class="fa-solid fa-download"></i>Descargar meme</button>
     </section>
 
     <aside class="barraLateral" id="myAside2">
@@ -76,11 +76,11 @@
             <div class="contenedorSelectorColor">
                 <div class="selectorColor">
                     <h4>COLOR</h4>
-                    <input type="color">
+                    <input type="color" id="colorTexto">
                 </div>
                 <div class="selectorColor">
                     <h4>FONDO</h4>
-                    <input type="color">
+                    <input type="color" id="colorFondoTexto">
                 </div>
             </div>
 
@@ -154,7 +154,7 @@
     </aside>
 
 </main>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/eb8debf0a8.js" crossorigin="anonymous"></script>
 </body>
