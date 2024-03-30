@@ -1,8 +1,7 @@
 /*Modo claro/oscuro y cambio de aside*/
 const botonImagen = document.getElementById('botonImagen');
 const botonTexto = document.getElementById('botonTexto');
-const botonModo = document.getElementById('botonModo');
-let header = document.getElementById('miHeader');
+
 let aside = document.getElementById('myAside');
 let aside2 = document.getElementById('myAside2');
 
@@ -15,6 +14,9 @@ botonImagen.addEventListener("click", () => {
     aside.style.display = "block";
     aside2.style.display = "none";
 });
+
+const botonModo = document.getElementById('botonModo');
+let header = document.getElementById('miHeader');
 let icono = document.getElementById('icono');
 
 let modoClaroOscuro = "Modo claro";
@@ -33,10 +35,12 @@ botonModo.addEventListener("click", () => {
         header.style.backgroundColor = "rgb(25, 30, 43)";
         aside.style.backgroundColor = "rgb(37, 41, 53)";
         aside2.style.backgroundColor = "rgb(37, 41, 53)";
+        textoSuperiorH2.style.color = "black"
+        textoInferiorH2.style.color = "black"
         icono.textContent = modoClaroOscuro;
         modoClaroOscuro = "Modo oscuro";
     }
-})
+});
 
 /*Menú imágen*/
 /*Agregar imágen con Url*/
@@ -150,15 +154,31 @@ if (negativo.value !== '100'){
     imageDiv.style.filter = filtroString.trim();
 }
 
-/*Botón descargar meme*/
-//  document.getElementById('btnDownload').addEventListener('click', async function() {
-//     console.log('Botón de descarga clicado');
-//     const canvas = await html2canvas(document.getElementById('fondo'));
-//     let a = document.createElement('a');
-//     a.download = 'captured.png';
-//     a.href = canvas.toDataURL('image/png');
-//     a.click();
-// });
+/*Botón restablecer filtros*/
+const botonRestablecerFiltros = document.getElementById('botonRestablecerFiltros');
+
+botonRestablecerFiltros.addEventListener('click', ()=> {
+    // Restablecer filtros de imagen
+    brillo.value = '100';
+    opacidad.value = '100';
+    contraste.value = '100';
+    desenfoque.value = '0';
+    escalaDeGrises.value = '0';
+    sepia.value = '0';
+    hue.value = '0';
+    saturado.value = '100';
+    negativo.value = '100';
+    aplicarFiltros(); // Aplicar los filtros restablecidos
+    // Restablecer color de fondo de la imagen
+    colorFondoImagen.value = 'black';
+    imageDiv.style.backgroundColor = colorFondoImagen.value;
+    // Restablecer efecto de fondo de la imagen
+    efectoFondoImagen.value = 'ninguno';
+    modificarColor(efectoFondoImagen);
+    // Restablecer URL de la imagen
+    document.getElementById('imageUrlInput').value = '';
+    cargarImagen();
+});
 
 /*Menú texto*/
 
@@ -182,17 +202,17 @@ const sinTextoInferior = document.getElementById('sinTextoInferior');
 
 sinTextoSuperior.addEventListener('click', () => {
     if (sinTextoSuperior.checked){
-        textoSuperiorH2.style.display = "none";
+        textoSuperiorH2.style.visibility = "hidden";
     } else {
-        textoSuperiorH2.style.display = "block";
+        textoSuperiorH2.style.visibility = "visible";
     }
 });
 
 sinTextoInferior.addEventListener('click', () => {
     if (sinTextoInferior.checked){
-        textoInferiorH2.style.display = "none";
+        textoInferiorH2.style.visibility = "hidden";
     } else {
-        textoInferiorH2.style.display = "block";
+        textoInferiorH2.style.visibility = "visible";
     }
 });
 
@@ -205,23 +225,28 @@ colorTexto.addEventListener('change', () => {
 })
 
 /*cambiar color del fondo texto*/
-const colorFondoTexto = document.getElementById('colorFondoTexto'); //captura el input del color de fondo del texto
+const colorFondoTexto = document.getElementById('colorFondoTexto');
 
 colorFondoTexto.addEventListener('change', () => {
-    fondo.style.backgroundColor = colorFondoTexto.value;
+    // fondo.style.backgroundColor = colorFondoTexto.value;
     textoSuperiorH2.style.backgroundColor = colorFondoTexto.value;
     textoInferiorH2.style.backgroundColor = colorFondoTexto.value;
+    colorFondoOriginal = colorFondoTexto.value;
 })
 
-/*checkbox fonfo transparente*/
+/*checkbox fondo transparente*/
 const fondoTransparente = document.getElementById('fondoTransparente');
 const fondo = document.getElementById('fondo');
 
 fondoTransparente.addEventListener('click', () => {
     if (fondoTransparente.checked){
-        fondo.style.backgroundColor = "rgba(255,255,255,0)";
+        fondo.style.backgroundColor = "transparent";
+        textoSuperiorH2.style.backgroundColor = "transparent";
+        textoInferiorH2.style.backgroundColor = "transparent";
     } else {
-        fondo.style.backgroundColor = "rgb(255, 255, 255)";
+        fondo.style.backgroundColor = 'white';
+        textoSuperiorH2.style.backgroundColor = colorFondoOriginal;
+        textoInferiorH2.style.backgroundColor = colorFondoOriginal;
     }
 });
 
@@ -232,14 +257,14 @@ const botonAlinearDerecha = document.getElementById('botonAlinearDerecha');
 
 const alinearTexto = (alinear) => {
     if (alinear.target.id === 'botonAlinearIzquierda'){
-        fondo.style.alignItems = 'start';
-        fondo.style.alignItems = 'start';
+        textoSuperiorH2.style.alignItems = 'start';
+        textoInferiorH2.style.alignItems = 'start';
     } else if (alinear.target.id === 'botonAlinearCentro'){
-        fondo.style.alignItems = 'center';
-        fondo.style.alignItems = 'center';
+        textoSuperiorH2.style.alignItems = 'center';
+        textoInferiorH2.style.alignItems = 'center';
     } else if (alinear.target.id === 'botonAlinearDerecha'){
-        fondo.style.alignItems = 'end';
-        fondo.style.alignItems = 'end';
+        textoSuperiorH2.style.alignItems = 'end';
+        textoInferiorH2.style.alignItems = 'end';
     }
 }
 
@@ -277,8 +302,8 @@ const cambiarFuente = (menuFuente) => {
         textoInferiorH2.style.fontFamily = 'american typewriter';
     }
     if (menuFuente.value === 'andalemono'){
-        textoSuperiorH2.style.fontFamily = 'andale mono';
-        textoInferiorH2.style.fontFamily = 'andale mono';
+        textoSuperiorH2.style.fontFamily = "'Andale Mono', monospace";
+        textoInferiorH2.style.fontFamily = "'Andale Mono', monospace";
     }
     if (menuFuente.value === 'comicsansMs'){
         textoSuperiorH2.style.fontFamily = 'comic sans ms';
@@ -310,6 +335,26 @@ tamanioFuente.addEventListener('change', () =>{
     textoInferiorH2.style.fontSize = tamanioFuente.value + 'px';
 });
 
+/*Menú texto contorno*/
+const botonContornoNinguno = document. getElementById('ninguno');
+const botonContornoClaro = document.getElementById('claro');
+const botonContornoOscuro = document.getElementById('oscuro');
+
+botonContornoNinguno.addEventListener('click', () => {
+    textoSuperiorH2.style.textShadow = 'none';
+    textoInferiorH2.style.textShadow = 'none';
+});
+
+botonContornoClaro.addEventListener('click', () => {
+    textoSuperiorH2.style.textShadow = '1px 1px 2px rgba(0,0,0,0.5)';
+    textoInferiorH2.style.textShadow = '1px 1px 2px rgba(0,0,0,0.5)';
+});
+
+botonContornoOscuro.addEventListener('click', () => {
+    textoSuperiorH2.style.textShadow = '1px 1px 2px rgba(0,0,0,1)';
+    textoInferiorH2.style.textShadow = '1px 1px 2px rgba(0,0,0,1)';
+});
+
 /*Menú texto espaciado*/
 const espaciado = document.getElementById('espaciado');
 
@@ -318,7 +363,7 @@ espaciado.addEventListener('change', () => {
     textoInferiorH2.style.letterSpacing = espaciado.value + 'px';
 });
 
-// /*Menú texto interliniado*/ (revisar)
+///*Menú texto interliniado*/ (revisar)
 const interliniado = document.getElementById('interliniado');
 const ceroPuntoOcho = document.getElementById('ceroPuntoOcho');
 const uno = document.getElementById('uno');
@@ -357,3 +402,13 @@ const cambiarInterliniado = (interliniado) => {
         textoInferiorH2.style.lineHeight  = '2.5';
     }
 }
+
+/*Botón descargar meme*/
+document.getElementById('btnDownload').addEventListener('click', async function() { 
+    const canvas = await html2canvas(document.getElementById('fondo'));
+    console.log(canvas);
+    let a = document.createElement('a');
+    a.download = 'captured.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+});

@@ -13,30 +13,28 @@
     <h1>Generador de Memes</h1>
     <nav>
         <ul>
-            <li><button id="botonImagen"><i class="fa-regular fa-file-image"></i>Imágen</button></li>
-            <li><button id="botonTexto"><i class="fa-solid fa-font"></i>Texto</button></li>
-            <li><button id="botonModo"><i class="fa-regular fa-lightbulb"></i><span id="icono">Modo oscuro</span></button></li>
+            <li><button id="botonImagen"><i class="fa-regular fa-file-image"></i>&nbsp;Imágen</button></li>
+            <li><button id="botonTexto"><i class="fa-solid fa-font"></i>&nbsp;Texto</button></li>
+            <li><button id="botonModo"><i class="fa-regular fa-lightbulb"></i><span id="icono">&nbsp;Modo oscuro</span></button></li>
         </ul>
     </nav>
 </header>
 
 <main>
     <section>
-        <div id="fondo">
-            
-                <h2 id="textoSuperiorH2">TOP TEXT</h2>
-            
-                
-            <div id="imageDiv">
 
+        <div id="fondo">
+            <h2 id="textoSuperiorH2">TOP TEXT</h2>
+
+            <div id="imageDiv">
             </div>
-            
-           
-                <h2 id="textoInferiorH2">BOTTOM TEXT</h2>
-            
-            
+
+            <h2 id="textoInferiorH2">BOTTOM TEXT
+            </h2>
         </div>
+
         <button id="btnDownload"><i class="fa-solid fa-download"></i>Descargar meme</button>
+    
     </section>
 
     <aside class="barraLateral" id="myAside2">
@@ -88,9 +86,9 @@
             <label for="fondoTransparente">Fondo transparente</label>
 
             <h4>CONTORNO</h4>
-            <button type="button">Ninguno</button>
-            <button type="button">Claro</button>
-            <button type="button">Oscuro</button>
+            <button type="button" id="ninguno">Ninguno</button>
+            <button type="button" id="claro">Claro</button>
+            <button type="button" id="oscuro">Oscuro</button>
 
             <h4>ESPACIADO</label>
             <input id="espaciado" type="number" placeholder="35">
@@ -124,31 +122,32 @@
             </select>
             <h4>FILTROS</h4>
             <label for="brillo">Brillo</label><br>
-            <input class="margenes" type="range" id="brillo" min="0" max="100" step="1">
-            <br>
+            <input class="margenes" type="range" id="brillo" min="0" max="100" step="1" value="100"><br>
+
             <label for="opacidad">Opacidad</label><br>
-            <input class="margenes" type="range" id="opacidad" min="0" max="100" step="1">
-            <br>
+            <input class="margenes" type="range" id="opacidad" min="0" max="100" step="1" value="100"><br>
+
             <label for="contraste">Contraste</label><br>
-            <input class="margenes" type="range" id="contraste" min="0" max="100" step="1">
-            <br>
+            <input class="margenes" type="range" id="contraste" min="0" max="100" step="1" value="100"><br>
+
             <label for="desenfoque">Desenfoque</label><br>
-            <input class="margenes" type="range" id="desenfoque" min="0" max="100" step="1">
-            <br>
+            <input class="margenes" type="range" id="desenfoque" min="0" max="100" step="1" value="0"><br>
+
             <label for="escalaDeGrises">Escala De Grises</label><br>
-            <input class="margenes" type="range" id="escalaDeGrises" min="0" max="100" step="1">
-            <br>
+            <input class="margenes" type="range" id="escalaDeGrises" min="0" max="100" step="1" value="0"><br>
+
             <label for="sepia">Sepia</label><br>
-            <input class="margenes" type="range" id="sepia" min="0" max="100" step="1">
-            <br>
+            <input class="margenes" type="range" id="sepia" min="0" max="100" step="1" value="0"><br>
+
             <label for="hue">HUE</label><br>
-            <input class="margenes" type="range" id="hue" min="0" max="100" step="1">
-            <br>
+            <input class="margenes" type="range" id="hue" min="0" max="100" step="1" value="0"><br>
+
             <label for="saturado">Saturado</label><br>
-            <input class="margenes" type="range" id="saturado" min="0" max="100" step="1">
-            <br>
+            <input class="margenes" type="range" id="saturado" min="0" max="100" step="1" value="100"><br>
+
             <label for="negativo">Negativo</label><br>
-            <input class="margenes" type="range" id="negativo" min="0" max="100" step="1">
+            <input class="margenes" type="range" id="negativo" min="0" max="100" step="1" value="100"><br>
+
         </form>
         <button id="botonRestablecerFiltros">Restablecer filtros</button>
     </aside>
