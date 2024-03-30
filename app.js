@@ -228,7 +228,6 @@ colorTexto.addEventListener('change', () => {
 const colorFondoTexto = document.getElementById('colorFondoTexto');
 
 colorFondoTexto.addEventListener('change', () => {
-    // fondo.style.backgroundColor = colorFondoTexto.value;
     textoSuperiorH2.style.backgroundColor = colorFondoTexto.value;
     textoInferiorH2.style.backgroundColor = colorFondoTexto.value;
     colorFondoOriginal = colorFondoTexto.value;
@@ -363,7 +362,7 @@ espaciado.addEventListener('change', () => {
     textoInferiorH2.style.letterSpacing = espaciado.value + 'px';
 });
 
-///*Menú texto interliniado*/ (revisar)
+/*Menú texto interliniado*/
 const interliniado = document.getElementById('interliniado');
 const ceroPuntoOcho = document.getElementById('ceroPuntoOcho');
 const uno = document.getElementById('uno');
@@ -404,11 +403,20 @@ const cambiarInterliniado = (interliniado) => {
 }
 
 /*Botón descargar meme*/
-document.getElementById('btnDownload').addEventListener('click', async function() { 
-    const canvas = await html2canvas(document.getElementById('fondo'));
-    console.log(canvas);
-    let a = document.createElement('a');
-    a.download = 'captured.png';
-    a.href = canvas.toDataURL('image/png');
-    a.click();
+btnDownload.addEventListener('click', () => {
+    new Promise((resolve, reject) => {
+        html2canvas(document.getElementById('fondo'), {
+            useCORS: true,
+            onrendered: canvas => {
+                resolve(canvas);
+            },
+            width: window.innerWidth,
+            height: window.innerHeight
+        });
+    }).then(canvas => {
+        var a = document.createElement('a');
+        a.download = 'captured.png';
+        a.href = canvas.toDataURL('image/png');
+        a.click();
+    });
 });
