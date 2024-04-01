@@ -278,22 +278,20 @@ tamanioFuente.addEventListener('change', () =>{
 });
 
 /*Botones alinear texto*/
-const alinearTexto = (alinear) => {
-    if (alinear.target.id === 'botonAlinearIzquierda'){
-        textoSuperiorH2.style.alignItems = 'start';
-        textoInferiorH2.style.alignItems = 'start';
-    } else if (alinear.target.id === 'botonAlinearCentro'){
-        textoSuperiorH2.style.alignItems = 'center';
-        textoInferiorH2.style.alignItems = 'center';
-    } else if (alinear.target.id === 'botonAlinearDerecha'){
-        textoSuperiorH2.style.alignItems = 'end';
-        textoInferiorH2.style.alignItems = 'end';
-    }
-}
+botonAlinearIzquierda.addEventListener('click', () => {
+    textoSuperiorH2.style.alignItems = 'start';
+    textoInferiorH2.style.alignItems = 'start';
+});
 
-botonAlinearIzquierda.addEventListener('click', (event)=>alinearTexto(event));
-botonAlinearCentro.addEventListener('click', (event)=>alinearTexto(event));
-botonAlinearDerecha.addEventListener('click', (event)=>alinearTexto(event));
+botonAlinearCentro.addEventListener('click', () => {
+    textoSuperiorH2.style.alignItems = 'center';
+    textoInferiorH2.style.alignItems = 'center';
+});
+
+botonAlinearDerecha.addEventListener('click', () => {
+    textoSuperiorH2.style.alignItems = 'end';
+    textoInferiorH2.style.alignItems = 'end';
+});
 
 /*cambiar color del texto*/
 colorTexto.addEventListener('change', () => {
