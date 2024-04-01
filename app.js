@@ -96,7 +96,7 @@ const modificarColor = (efectoFondoImagen) => {
     if (efectoFondoImagen.value === 'multiplicar'){
         imageDiv.style.backgroundBlendMode = 'multiply';
     }
-}
+};
 
 /*Efecto fondo imágen*/
 
@@ -121,63 +121,63 @@ hue.addEventListener('change', aplicarFiltros);
 saturado.addEventListener('change', aplicarFiltros);
 negativo.addEventListener('change', aplicarFiltros);
 
+// function aplicarFiltros(){
 function aplicarFiltros(){
     let filtroString ='';
 
-    if (brillo.value !== '100'){
-    filtroString += `brightness(${brillo.value}%) `;
+    if (brillo.value !== '1'){
+        filtroString += `brightness(${brillo.value}) `;
 }
-if (opacidad.value !== '100'){
-    filtroString += `opacity(${opacidad.value}%) `;
+    if (opacidad.value !== '1'){
+        filtroString += `opacity(${opacidad.value}) `;
 }
-if (contraste.value !== '100'){
-    filtroString += `contrast(${contraste.value}%) `;
+    if (contraste.value !== '100'){
+        filtroString += `contrast(${contraste.value}%) `;
 }
-if (desenfoque.value !== '0'){
-    filtroString += `blur(${desenfoque.value}px) `;
+    if (desenfoque.value !== '0'){
+        filtroString += `blur(${desenfoque.value}px) `;
 }
-if (escalaDeGrises.value !== '0'){
-    filtroString += `grayscale(${escalaDeGrises.value}%) `;
+    if (escalaDeGrises.value !== '0'){
+        filtroString += `grayscale(${escalaDeGrises.value}%) `;
 }
-if (sepia.value !== '0'){
-    filtroString += `sepia(${sepia.value}%) `;
+    if (sepia.value !== '0'){
+        filtroString += `sepia(${sepia.value}%) `;
 }
-if (hue.value !== '0'){
-    filtroString += `hue-rotate(${hue.value}deg) `;
+    if (hue.value !== '0'){
+        filtroString += `hue-rotate(${hue.value}deg) `;
 }
-if (saturado.value !== '100'){
-    filtroString += `saturate(${saturado.value}%) `;
+    if (saturado.value !== '100'){
+        filtroString += `saturate(${saturado.value}%) `;
 }
-if (negativo.value !== '100'){
-    filtroString += `invert(${negativo.value}%) `;
+    if (negativo.value !== '0'){
+        filtroString += `invert(${negativo.value})`;
 }
     imageDiv.style.filter = filtroString.trim();
-}
-
+};
 /*Botón restablecer filtros*/
 const botonRestablecerFiltros = document.getElementById('botonRestablecerFiltros');
 
 botonRestablecerFiltros.addEventListener('click', ()=> {
     // Restablecer filtros de imagen
-    brillo.value = '100';
-    opacidad.value = '100';
+    brillo.value = '1';
+    opacidad.value = '1';
     contraste.value = '100';
     desenfoque.value = '0';
     escalaDeGrises.value = '0';
     sepia.value = '0';
     hue.value = '0';
     saturado.value = '100';
-    negativo.value = '100';
+    negativo.value = '0';
     aplicarFiltros(); // Aplicar los filtros restablecidos
     // Restablecer color de fondo de la imagen
-    colorFondoImagen.value = 'black';
-    imageDiv.style.backgroundColor = colorFondoImagen.value;
+    // colorFondoImagen.value = 'black';
+    // imageDiv.style.backgroundColor = colorFondoImagen.value;
     // Restablecer efecto de fondo de la imagen
-    efectoFondoImagen.value = 'ninguno';
-    modificarColor(efectoFondoImagen);
+    // efectoFondoImagen.value = 'ninguno';
+    // modificarColor(efectoFondoImagen);
     // Restablecer URL de la imagen
-    document.getElementById('imageUrlInput').value = '';
-    cargarImagen();
+    // document.getElementById('imageUrlInput').value = '';
+    // cargarImagen();
 });
 
 /*Menú texto*/
@@ -306,7 +306,7 @@ const cambiarFuente = (menuFuente) => {
     }
     if (menuFuente.value === 'comicsansMs'){
         textoSuperiorH2.style.fontFamily = 'comic sans ms';
-        textoInferiorH2.style.fontFamily = 'comic sans ms';
+        textoInfergiiorH2.style.fontFamily = 'comic sans ms';
     }
     if (menuFuente.value === 'helvetica'){
         textoSuperiorH2.style.fontFamily = 'helvetica';

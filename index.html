@@ -1,160 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="...">
+    <meta name="description" content="Es...">
+    <meta name="author" content="Natalia Schwindt">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Editor de Memes</title>
 </head>
 
 <body>
 
-<header id="miHeader">
-    <h1>Generador de Memes</h1>
-    <nav>
-        <ul>
-            <li><button id="botonImagen"><i class="fa-regular fa-file-image"></i>&nbsp;Imágen</button></li>
-            <li><button id="botonTexto"><i class="fa-solid fa-font"></i>&nbsp;Texto</button></li>
-            <li><button id="botonModo"><i class="fa-regular fa-lightbulb"></i><span id="icono">&nbsp;Modo oscuro</span></button></li>
-        </ul>
-    </nav>
-</header>
+    <header id="miHeader">
+        <h1>Generador de Memes</h1>
+        <nav>
+            <ul>
+                <li><button id="botonImagen" aria-label="Editor Imágen"><i class="fa-regular fa-file-image" aria-hidden="true"></i>&nbsp;Imágen</button></li>
+                <li><button id="botonTexto" aria-label="Editor Texto"><i class="fa-solid fa-font" aria-hidden="true"></i>&nbsp;Texto</button></li>
+                <li><button id="botonModo" aria-label="Cambiar a Modo Claro Oscuro"><i class="fa-regular fa-lightbulb" aria-hidden="true"></i><span id="icono" aria-hidden="true">&nbsp;Modo
+                            oscuro</span></button></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-    <section>
+    <main>
+        <section>
 
-        <div id="fondo">
-            <h2 id="textoSuperiorH2">TOP TEXT</h2>
+            <div id="fondo">
+                <h2 id="textoSuperiorH2">TOP TEXT</h2>
 
-            <div id="imageDiv">
+                <div id="imageDiv" aria-label="Imagen de meme">
+                </div>
+
+                <h2 id="textoInferiorH2">BOTTOM TEXT
+                </h2>
             </div>
 
-            <h2 id="textoInferiorH2">BOTTOM TEXT
-            </h2>
-        </div>
+            <button id="btnDownload" aria-label="Descargar meme"><i class="fa-solid fa-download" aria-hidden="true"></i>Descargar meme</button>
 
-        <button id="btnDownload"><i class="fa-solid fa-download"></i>Descargar meme</button>
-    
-    </section>
+        </section>
 
-    <aside class="barraLateral" id="myAside2">
-        <h3>TEXTO</h3>
-        <form action="#">
-            <label for="textoSuperiorInput">SUPERIOR</label><br>
-            <input name="textoSuperiorInput" placeholder="TOP TEXT" id="textoSuperiorInput"><br>
+        <aside class="barraLateral" id="myAside2">
+            <h3>TEXTO</h3>
+            <form action="#">
+                <label for="textoSuperiorInput">SUPERIOR</label><br>
+                <input name="textoSuperiorInput" placeholder="TOP TEXT" id="textoSuperiorInput" aria-label="Escribe el texto superior del meme"><br>
 
-            <input id="sinTextoSuperior" type="checkbox">
-            <label for="sinTextoSuperior">Sin texto superior</label><br>
+                <input id="sinTextoSuperior" type="checkbox">
+                <label for="sinTextoSuperior">Sin texto superior</label><br>
 
-            <label for="textoInferiorInput">INFERIOR</label><br>
-            <input name="textoInferiorInput" placeholder="BOTTOM TEXT" id="textoInferiorInput"><br>
+                <label for="textoInferiorInput">INFERIOR</label><br>
+                <input name="textoInferiorInput" placeholder="BOTTOM TEXT" id="textoInferiorInput" aria-label="Escribe el texto inferior del meme"><br>
 
-            <input id="sinTextoInferior" type="checkbox">
-            <label for="sinTextoInferior">Sin texto inferior</label><br>
+                <input id="sinTextoInferior" type="checkbox">
+                <label for="sinTextoInferior">Sin texto inferior</label><br>
 
-            <label for="fuente">FUENTE</label><br>
-            <select id="fuente" name="fuente">
-                <option id="arial" value="arial">Arial</option>
-                <option id="arialblack" value="arialblack">Arial Black</option>
-                <option id="americantypewriter" value="americantypewriter">American Typewriter</option>
-                <option id="andalemono" value="andalemono">Andale Mono</option>
-                <option id="comicsansMs" value="comicsansMs">Comic Sans MS</option>
-                <option id="helvetica" value="helvetica">Helvetica</option>
-                <option id="impact" value="impact">Impact</option>
-                <option id="verdana" value="verdana">Verdana</option>
-                <option id="timesnewroman" value="timesnewroman">Times New Roman</option>
-            </select>
+                <label for="fuente">FUENTE</label><br>
+                <select id="fuente" name="fuente" aria-label="Seleccione el tipo de fuente">
+                    <option id="arial" value="arial">Arial</option>
+                    <option id="arialblack" value="arialblack">Arial Black</option>
+                    <option id="americantypewriter" value="americantypewriter">American Typewriter</option>
+                    <option id="andalemono" value="andalemono">Andale Mono</option>
+                    <option id="comicsansMs" value="comicsansMs">Comic Sans MS</option>
+                    <option id="helvetica" value="helvetica">Helvetica</option>
+                    <option id="impact" value="impact">Impact</option>
+                    <option id="verdana" value="verdana">Verdana</option>
+                    <option id="timesnewroman" value="timesnewroman">Times New Roman</option>
+                </select>
 
-            <input id="tamanioFuente" class="ancho" type="number" placeholder="40">
+                <input id="tamanioFuente" class="ancho" type="number" placeholder="40" aria-label="Tamaño de fuente">
 
-            <button type="button" id="botonAlinearIzquierda"><i id="botonAlinearIzquierda" class="fa-solid fa-align-left"></i></button>
-            <button type="button" id="botonAlinearCentro"><i id="botonAlinearCentro" class="fa-solid fa-align-center"></i></button>
-            <button type="button" id="botonAlinearDerecha"><i id="botonAlinearDerecha" class="fa-solid fa-align-right"></i></button>
-            
-            <div class="contenedorSelectorColor">
-                <div class="selectorColor">
-                    <h4>COLOR</h4>
-                    <input type="color" id="colorTexto">
+                <button type="button" id="botonAlinearIzquierda" aria-label="Justificar texto a la izquierda"><i id="botonAlinearIzquierda"
+                        class="fa-solid fa-align-left" aria-hidden="true"></i></button>
+                <button type="button" id="botonAlinearCentro" aria-label="Justificar texto en el centro"><i id="botonAlinearCentro"
+                        class="fa-solid fa-align-center" aria-hidden="true"></i></button>
+                <button type="button" id="botonAlinearDerecha" aria-label="Justificar texto a la derecha"><i id="botonAlinearDerecha"
+                        class="fa-solid fa-align-right" aria-hidden="true"></i></button>
+
+                <div class="contenedorSelectorColor">
+                    <div class="selectorColor">
+                        <h4>COLOR</h4>
+                        <input type="color" id="colorTexto" aria-label="Seleccione color texto">
+                    </div>
+                    <div class="selectorColor">
+                        <h4>FONDO</h4>
+                        <input type="color" id="colorFondoTexto" aria-label="Seleccione color texto">
+                    </div>
                 </div>
-                <div class="selectorColor">
-                    <h4>FONDO</h4>
-                    <input type="color" id="colorFondoTexto">
-                </div>
-            </div>
 
-            <input id="fondoTransparente" type="checkbox">
-            <label for="fondoTransparente">Fondo transparente</label>
+                <input id="fondoTransparente" type="checkbox">
+                <label for="fondoTransparente">Fondo transparente</label>
 
-            <h4>CONTORNO</h4>
-            <button type="button" id="ninguno">Ninguno</button>
-            <button type="button" id="claro">Claro</button>
-            <button type="button" id="oscuro">Oscuro</button>
+                <h4>CONTORNO</h4>
+                <button type="button" id="ninguno" aria-label="Sin contorno de texto">Ninguno</button>
+                <button type="button" id="claro" aria-label="Contorno de texto claro">Claro</button>
+                <button type="button" id="oscuro" aria-label="Contorno de texto oscuro">Oscuro</button>
 
-            <h4>ESPACIADO</label>
-            <input id="espaciado" type="number" placeholder="35">
+                <h4>ESPACIADO</label>
+                    <input id="espaciado" type="number" placeholder="35" aria-label="Espaciado">
 
-            <H4>INTERLINEADO</H4>
-            <select id="interliniado" name="interliniado">
-                <option id="ceroPuntoOcho" value="0">0.8</option>
-                <option id="uno" value="1">1</option>
-                <option id="unoPuntoDos" value="12">1.2</option>
-                <option id="unoPuntoCinco" value="15">1.5</option>
-                <option id="dos" value="2">2</option>
-                <option id="dosPuntoCinco" value="25">2.5</option>
-            </select>
-        </form>
-    </aside>
+                    <H4>INTERLINEADO</H4>
+                    <select id="interliniado" name="interliniado" aria-label="Interliniado">
+                        <option id="ceroPuntoOcho" value="0">0.8</option>
+                        <option id="uno" value="1">1</option>
+                        <option id="unoPuntoDos" value="12">1.2</option>
+                        <option id="unoPuntoCinco" value="15">1.5</option>
+                        <option id="dos" value="2">2</option>
+                        <option id="dosPuntoCinco" value="25">2.5</option>
+                    </select>
+            </form>
+        </aside>
 
-    <aside class="barraLateral" id="myAside">
-        <h3>IMÁGEN</h3>
-        <form action="#">
-            <label for="imageUrlInput">URL</label><br>
-            <input type="url" id="imageUrlInput" name="imageUrlInput">
-            <h4>FONDO</h4>
-            <input type="color" id="colorFondoImagen">
-            <select id="efectoFondoImagen" name="efectoFondoImagen">
-                <option id="ninguno" value="ninguno">Ninguno</option>
-                <option id="aclarar" value="aclarar">Aclarar</option>
-                <option id="oscurecer" value="oscurecer">Oscurecer</option>
-                <option id="diferencia" value="diferencia">Diferencia</option>
-                <option id="luminosidad" value="luminosidad">Luminosidad</option>
-                <option id="multiplicar" value="multiplicar">Multiplicar</option>
-            </select>
-            <h4>FILTROS</h4>
-            <label for="brillo">Brillo</label><br>
-            <input class="margenes" type="range" id="brillo" min="0" max="100" step="1" value="100"><br>
+        <aside class="barraLateral" id="myAside">
+            <h3>IMÁGEN</h3>
+            <form action="#">
+                <label for="imageUrlInput">URL</label><br>
+                <input type="url" id="imageUrlInput" name="imageUrlInput" aria-label="Url de la imágen">
+                <h4>FONDO</h4>
+                <input type="color" id="colorFondoImagen" aria-label="Color de fondo de la imágen">
+                <select id="efectoFondoImagen" name="efectoFondoImagen" aria-label="Mezcla del color del fondo y de la imágen">
+                    <option id="ninguno" value="ninguno">Ninguno</option>
+                    <option id="aclarar" value="aclarar">Aclarar</option>
+                    <option id="oscurecer" value="oscurecer">Oscurecer</option>
+                    <option id="diferencia" value="diferencia">Diferencia</option>
+                    <option id="luminosidad" value="luminosidad">Luminosidad</option>
+                    <option id="multiplicar" value="multiplicar">Multiplicar</option>
+                </select>
+                <h4>FILTROS</h4>
+                
+                <label for="brillo">Brillo</label><br>
+                <input class="margenes" type="range" id="brillo" min="0" max="1" step="0.1" value="1" aria-label="Brillo"><br>
 
-            <label for="opacidad">Opacidad</label><br>
-            <input class="margenes" type="range" id="opacidad" min="0" max="100" step="1" value="100"><br>
+                <label for="opacidad">Opacidad</label><br>
+                <input class="margenes" type="range" id="opacidad" min="0" max="1" step="0.1" value="1" aria-label="Opacidad"><br>
 
-            <label for="contraste">Contraste</label><br>
-            <input class="margenes" type="range" id="contraste" min="0" max="100" step="1" value="100"><br>
+                <label for="contraste">Contraste</label><br>
+                <input class="margenes" type="range" id="contraste" min="100" max="1000" step="1" value="100" aria-label="Contraste"><br>
 
-            <label for="desenfoque">Desenfoque</label><br>
-            <input class="margenes" type="range" id="desenfoque" min="0" max="100" step="1" value="0"><br>
+                <label for="desenfoque">Desenfoque</label><br>
+                <input class="margenes" type="range" id="desenfoque" min="0" max="10" step="0.1" value="0" aria-label="Desenfoque"><br>
 
-            <label for="escalaDeGrises">Escala De Grises</label><br>
-            <input class="margenes" type="range" id="escalaDeGrises" min="0" max="100" step="1" value="0"><br>
+                <label for="escalaDeGrises">Escala De Grises</label><br>
+                <input class="margenes" type="range" id="escalaDeGrises" min="0" max="100" step="1" value="0" aria-label="Escala de Grises"><br>
 
-            <label for="sepia">Sepia</label><br>
-            <input class="margenes" type="range" id="sepia" min="0" max="100" step="1" value="0"><br>
+                <label for="sepia">Sepia</label><br>
+                <input class="margenes" type="range" id="sepia" min="0" max="100" step="1" value="0" aria-label="Sepia"><br>
 
-            <label for="hue">HUE</label><br>
-            <input class="margenes" type="range" id="hue" min="0" max="100" step="1" value="0"><br>
+                <label for="hue">HUE</label><br>
+                <input class="margenes" type="range" id="hue" min="0" max="359" step="1" value="0" aria-label="Hue"><br>
 
-            <label for="saturado">Saturado</label><br>
-            <input class="margenes" type="range" id="saturado" min="0" max="100" step="1" value="100"><br>
+                <label for="saturado">Saturado</label><br>
+                <input class="margenes" type="range" id="saturado" min="100" max="1000" step="10" value="100" aria-label="Saturado"><br>
 
-            <label for="negativo">Negativo</label><br>
-            <input class="margenes" type="range" id="negativo" min="0" max="100" step="1" value="100"><br>
+                <label for="negativo">Negativo</label><br>
+                <input class="margenes" type="range" id="negativo" min="0" max="1" step="0.1" value="0" aria-label="Negativo"><br>
+            </form>
+            <button id="botonRestablecerFiltros" aria-label="Restablecer filtros">Restablecer filtros</button>
+        </aside>
 
-        </form>
-        <button id="botonRestablecerFiltros">Restablecer filtros</button>
-    </aside>
-
-</main>
+    </main>
+    <footer>
+        <p class="firma">&copy; Natalia Schwindt 2024.</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/eb8debf0a8.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
