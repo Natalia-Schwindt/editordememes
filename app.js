@@ -1,10 +1,67 @@
-/*Modo claro/oscuro y cambio de aside*/
+//Variables de objetos capturados
 const botonImagen = document.getElementById('botonImagen');
 const botonTexto = document.getElementById('botonTexto');
+const aside = document.getElementById('myAside');
+const aside2 = document.getElementById('myAside2');
+const botonModo = document.getElementById('botonModo');
+const header = document.getElementById('miHeader');
+const icono = document.getElementById('icono');
+const imageDiv = document.getElementById('imageDiv');
+const colorFondoImagen = document.getElementById('colorFondoImagen');
+const efectoFondoImagen = document.getElementById('efectoFondoImagen');
+const ninguno = document.getElementById('ninguno');
+const aclarar = document.getElementById('aclarar');
+const oscurecer = document.getElementById('ocurecer');
+const diferencia = document.getElementById('diferencia');
+const luminosidad = document.getElementById('luminosidad');
+const multiplicar = document.getElementById('multiplicar');
+const brillo = document.getElementById('brillo');
+const opacidad = document.getElementById('opacidad');
+const contraste = document.getElementById('contraste');
+const desenfoque = document.getElementById('desenfoque');
+const escalaDeGrises = document.getElementById('escalaDeGrises');
+const sepia = document.getElementById('sepia');
+const hue = document.getElementById('hue');
+const saturado = document.getElementById('saturado');
+const negativo = document.getElementById('negativo');
+const botonRestablecerFiltros = document.getElementById('botonRestablecerFiltros');
+const textoSuperiorInput = document.getElementById('textoSuperiorInput');
+const textoInferiorInput = document.getElementById('textoInferiorInput');
+const textoSuperiorH2 = document.getElementById('textoSuperiorH2');
+const textoInferiorH2 = document.getElementById('textoInferiorH2');
+const sinTextoSuperior = document.getElementById('sinTextoSuperior');
+const sinTextoInferior = document.getElementById('sinTextoInferior');
+const colorTexto = document.getElementById('colorTexto');
+const colorFondoTexto = document.getElementById('colorFondoTexto');
+const fondoTransparente = document.getElementById('fondoTransparente');
+const fondo = document.getElementById('fondo');
+const botonAlinearIzquierda = document.getElementById('botonAlinearIzquierda');
+const botonAlinearCentro = document.getElementById('botonAlinearCentro');
+const botonAlinearDerecha = document.getElementById('botonAlinearDerecha');
+const menuFuente = document.getElementById('fuente');
+const arial = document.getElementById('arial');
+const arialBlack = document.getElementById('arialBlack');
+const americanTypewriter = document.getElementById('americanTypewriter');
+const andaleMono = document.getElementById('andaleMono');
+const comicSanMs = document.getElementById('comicSansMs');
+const helvetica = document.getElementById('helvetica');
+const impact = document.getElementById('impact');
+const verdana = document.getElementById('verdana');
+const timesNewRoman = document.getElementById('timesNewRoman');
+const tamanioFuente = document.getElementById('tamanioFuente');
+const botonContornoNinguno = document. getElementById('ninguno');
+const botonContornoClaro = document.getElementById('claro');
+const botonContornoOscuro = document.getElementById('oscuro');
+const espaciado = document.getElementById('espaciado');
+const interliniado = document.getElementById('interliniado');
+const ceroPuntoOcho = document.getElementById('ceroPuntoOcho');
+const uno = document.getElementById('uno');
+const unoPuntoDos = document.getElementById('unoPuntoDos');
+const unoPuntoCinco = document.getElementById('unoPuntoCinco');
+const dos = document.getElementById('dos');
+const dosPuntoCinco = document.getElementById('dosPuntoCinco');
 
-let aside = document.getElementById('myAside');
-let aside2 = document.getElementById('myAside2');
-
+ /*cambio de aside Imágen y texto*/
 botonTexto.addEventListener("click", () => {
     aside.style.display = "none";
     aside2.style.display = "block";
@@ -15,10 +72,7 @@ botonImagen.addEventListener("click", () => {
     aside2.style.display = "none";
 });
 
-const botonModo = document.getElementById('botonModo');
-let header = document.getElementById('miHeader');
-let icono = document.getElementById('icono');
-
+/*Modo claro/oscuro*/
 let modoClaroOscuro = "Modo claro";
 botonModo.addEventListener("click", () => {
     if (modoClaroOscuro === "Modo oscuro"){
@@ -57,22 +111,11 @@ function cargarImagen() {
 };
 
 /*Color fondo imágen*/
-const imageDiv = document.getElementById('imageDiv');
-const colorFondoImagen = document.getElementById('colorFondoImagen');
-
 colorFondoImagen.addEventListener('change', () =>{
     imageDiv.style.backgroundColor = colorFondoImagen.value;
 });
 
-/*Menú cambiar color fondo imágen*/
-const efectoFondoImagen = document.getElementById('efectoFondoImagen');
-const ninguno = document.getElementById('ninguno');
-const aclarar = document.getElementById('aclarar');
-const oscurecer = document.getElementById('ocurecer');
-const diferencia = document.getElementById('diferencia');
-const luminosidad = document.getElementById('luminosidad');
-const multiplicar = document.getElementById('multiplicar');
-
+/*Menú combinar color de fondo e imágen*/
 efectoFondoImagen.addEventListener('change', () => {
     modificarColor(efectoFondoImagen);
 });
@@ -98,19 +141,7 @@ const modificarColor = (efectoFondoImagen) => {
     }
 };
 
-/*Efecto fondo imágen*/
-
-/*Input Rango*/
-const brillo = document.getElementById('brillo');
-const opacidad = document.getElementById('opacidad');
-const contraste = document.getElementById('contraste');
-const desenfoque = document.getElementById('desenfoque');
-const escalaDeGrises = document.getElementById('escalaDeGrises');
-const sepia = document.getElementById('sepia');
-const hue = document.getElementById('hue');
-const saturado = document.getElementById('saturado');
-const negativo = document.getElementById('negativo');
-
+/*Efectos de filtros de la imágen*/
 brillo.addEventListener('change', aplicarFiltros);
 opacidad.addEventListener('change', aplicarFiltros);
 contraste.addEventListener('change', aplicarFiltros);
@@ -121,7 +152,6 @@ hue.addEventListener('change', aplicarFiltros);
 saturado.addEventListener('change', aplicarFiltros);
 negativo.addEventListener('change', aplicarFiltros);
 
-// function aplicarFiltros(){
 function aplicarFiltros(){
     let filtroString ='';
 
@@ -154,11 +184,10 @@ function aplicarFiltros(){
 }
     imageDiv.style.filter = filtroString.trim();
 };
-/*Botón restablecer filtros*/
-const botonRestablecerFiltros = document.getElementById('botonRestablecerFiltros');
 
+/*Botón restablecer filtros*/
 botonRestablecerFiltros.addEventListener('click', ()=> {
-    // Restablecer filtros de imagen
+
     brillo.value = '1';
     opacidad.value = '1';
     contraste.value = '100';
@@ -168,26 +197,11 @@ botonRestablecerFiltros.addEventListener('click', ()=> {
     hue.value = '0';
     saturado.value = '100';
     negativo.value = '0';
-    aplicarFiltros(); // Aplicar los filtros restablecidos
-    // Restablecer color de fondo de la imagen
-    // colorFondoImagen.value = 'black';
-    // imageDiv.style.backgroundColor = colorFondoImagen.value;
-    // Restablecer efecto de fondo de la imagen
-    // efectoFondoImagen.value = 'ninguno';
-    // modificarColor(efectoFondoImagen);
-    // Restablecer URL de la imagen
-    // document.getElementById('imageUrlInput').value = '';
-    // cargarImagen();
+    aplicarFiltros();
 });
 
 /*Menú texto*/
-
-/*Input de entrada de texto*/
-const textoSuperiorInput = document.getElementById('textoSuperiorInput');
-const textoInferiorInput = document.getElementById('textoInferiorInput');
-const textoSuperiorH2 = document.getElementById('textoSuperiorH2');
-const textoInferiorH2 = document.getElementById('textoInferiorH2');
-
+/*Input de entrada de texto superior e inferior*/
 textoSuperiorInput.addEventListener('input', () => {
     textoSuperiorH2.textContent = textoSuperiorInput.value;
 });
@@ -197,9 +211,6 @@ textoInferiorInput.addEventListener('input', () => {
 });
 
 /*checkbox superior e inferior*/
-const sinTextoSuperior = document.getElementById('sinTextoSuperior');
-const sinTextoInferior = document.getElementById('sinTextoInferior');
-
 sinTextoSuperior.addEventListener('click', () => {
     if (sinTextoSuperior.checked){
         textoSuperiorH2.style.visibility = "hidden";
@@ -216,44 +227,57 @@ sinTextoInferior.addEventListener('click', () => {
     }
 });
 
-/*cambiar color del texto*/
-const colorTexto = document.getElementById('colorTexto');
+/*Menú cambiar fuente*/
+menuFuente.addEventListener('change', () => {
+    cambiarFuente(menuFuente);
+});
 
-colorTexto.addEventListener('change', () => {
-    textoSuperiorH2.style.color = colorTexto.value;
-    textoInferiorH2.style.color = colorTexto.value;
-})
-
-/*cambiar color del fondo texto*/
-const colorFondoTexto = document.getElementById('colorFondoTexto');
-
-colorFondoTexto.addEventListener('change', () => {
-    textoSuperiorH2.style.backgroundColor = colorFondoTexto.value;
-    textoInferiorH2.style.backgroundColor = colorFondoTexto.value;
-    colorFondoOriginal = colorFondoTexto.value;
-})
-
-/*checkbox fondo transparente*/
-const fondoTransparente = document.getElementById('fondoTransparente');
-const fondo = document.getElementById('fondo');
-
-fondoTransparente.addEventListener('click', () => {
-    if (fondoTransparente.checked){
-        fondo.style.backgroundColor = "transparent";
-        textoSuperiorH2.style.backgroundColor = "transparent";
-        textoInferiorH2.style.backgroundColor = "transparent";
-    } else {
-        fondo.style.backgroundColor = 'white';
-        textoSuperiorH2.style.backgroundColor = colorFondoOriginal;
-        textoInferiorH2.style.backgroundColor = colorFondoOriginal;
+const cambiarFuente = (menuFuente) => {
+    if (menuFuente.value === 'arial'){
+        textoSuperiorH2.style.fontFamily = 'arial';
+        textoInferiorH2.style.fontFamily = 'arial';
     }
+    if (menuFuente.value === 'arialBlack'){
+        textoSuperiorH2.style.fontFamily = 'arial black';
+        textoInferiorH2.style.fontFamily = 'arial black';
+    }
+    if (menuFuente.value === 'americanTypewriter'){
+        textoSuperiorH2.style.fontFamily = 'american typewriter';
+        textoInferiorH2.style.fontFamily = 'american typewriter';
+    }
+    if (menuFuente.value === 'andaleMono'){
+        textoSuperiorH2.style.fontFamily = "'Andale Mono', monospace";
+        textoInferiorH2.style.fontFamily = "'Andale Mono', monospace";
+    }
+    if (menuFuente.value === 'comicSansMs'){
+        textoSuperiorH2.style.fontFamily = 'comic sans ms';
+        textoInfergiiorH2.style.fontFamily = 'comic sans ms';
+    }
+    if (menuFuente.value === 'helvetica'){
+        textoSuperiorH2.style.fontFamily = 'helvetica';
+        textoInferiorH2.style.fontFamily = 'helvetica';
+    }
+    if (menuFuente.value === 'impact'){
+        textoSuperiorH2.style.fontFamily = 'impact';
+        textoInferiorH2.style.fontFamily = 'impact';
+    }
+    if (menuFuente.value === 'verdana'){
+        textoSuperiorH2.style.fontFamily = 'verdana';
+        textoInferiorH2.style.fontFamily = 'verdana';
+    }
+    if (menuFuente.value === 'timesNewRoman'){
+        textoSuperiorH2.style.fontFamily = 'times new roman';
+        textoInferiorH2.style.fontFamily = 'times new roman';
+    }
+}
+
+/*Cambiar tamaño de fuente*/
+tamanioFuente.addEventListener('change', () =>{
+    textoSuperiorH2.style.fontSize = tamanioFuente.value + 'px';
+    textoInferiorH2.style.fontSize = tamanioFuente.value + 'px';
 });
 
 /*Botones alinear texto*/
-const botonAlinearIzquierda = document.getElementById('botonAlinearIzquierda');
-const botonAlinearCentro = document.getElementById('botonAlinearCentro');
-const botonAlinearDerecha = document.getElementById('botonAlinearDerecha');
-
 const alinearTexto = (alinear) => {
     if (alinear.target.id === 'botonAlinearIzquierda'){
         textoSuperiorH2.style.alignItems = 'start';
@@ -271,74 +295,33 @@ botonAlinearIzquierda.addEventListener('click', (event)=>alinearTexto(event));
 botonAlinearCentro.addEventListener('click', (event)=>alinearTexto(event));
 botonAlinearDerecha.addEventListener('click', (event)=>alinearTexto(event));
 
-/*Menú cambiar fuente*/
-const menuFuente = document.getElementById('fuente');
-const arial = document.getElementById('arial');
-const arialblack = document.getElementById('arialblack');
-const americantypewriter = document.getElementById('americantypewriter');
-const andalemono = document.getElementById('andalemono');
-const comicsanMs = document.getElementById('comicsansMs');
-const helvetica = document.getElementById('helvetica');
-const impact = document.getElementById('impact');
-const verdana = document.getElementById('verdana');
-const timesnewroman = document.getElementById('timesnewroman');
+/*cambiar color del texto*/
+colorTexto.addEventListener('change', () => {
+    textoSuperiorH2.style.color = colorTexto.value;
+    textoInferiorH2.style.color = colorTexto.value;
+})
 
-menuFuente.addEventListener('change', () => {
-    cambiarFuente(menuFuente);
-});
+/*cambiar color del fondo texto*/
+colorFondoTexto.addEventListener('change', () => {
+    textoSuperiorH2.style.backgroundColor = colorFondoTexto.value;
+    textoInferiorH2.style.backgroundColor = colorFondoTexto.value;
+    colorFondoOriginal = colorFondoTexto.value;
+})
 
-const cambiarFuente = (menuFuente) => {
-    if (menuFuente.value === 'arial'){
-        textoSuperiorH2.style.fontFamily = 'arial';
-        textoInferiorH2.style.fontFamily = 'arial';
+/*checkbox fondo transparente*/
+fondoTransparente.addEventListener('click', () => {
+    if (fondoTransparente.checked){
+        fondo.style.backgroundColor = "transparent";
+        textoSuperiorH2.style.backgroundColor = "transparent";
+        textoInferiorH2.style.backgroundColor = "transparent";
+    } else {
+        fondo.style.backgroundColor = 'white';
+        textoSuperiorH2.style.backgroundColor = colorFondoOriginal;
+        textoInferiorH2.style.backgroundColor = colorFondoOriginal;
     }
-    if (menuFuente.value === 'arialblack'){
-        textoSuperiorH2.style.fontFamily = 'arial black';
-        textoInferiorH2.style.fontFamily = 'arial black';
-    }
-    if (menuFuente.value === 'americantypewriter'){
-        textoSuperiorH2.style.fontFamily = 'american typewriter';
-        textoInferiorH2.style.fontFamily = 'american typewriter';
-    }
-    if (menuFuente.value === 'andalemono'){
-        textoSuperiorH2.style.fontFamily = "'Andale Mono', monospace";
-        textoInferiorH2.style.fontFamily = "'Andale Mono', monospace";
-    }
-    if (menuFuente.value === 'comicsansMs'){
-        textoSuperiorH2.style.fontFamily = 'comic sans ms';
-        textoInfergiiorH2.style.fontFamily = 'comic sans ms';
-    }
-    if (menuFuente.value === 'helvetica'){
-        textoSuperiorH2.style.fontFamily = 'helvetica';
-        textoInferiorH2.style.fontFamily = 'helvetica';
-    }
-    if (menuFuente.value === 'impact'){
-        textoSuperiorH2.style.fontFamily = 'impact';
-        textoInferiorH2.style.fontFamily = 'impact';
-    }
-    if (menuFuente.value === 'verdana'){
-        textoSuperiorH2.style.fontFamily = 'verdana';
-        textoInferiorH2.style.fontFamily = 'verdana';
-    }
-    if (menuFuente.value === 'timesnewroman'){
-        textoSuperiorH2.style.fontFamily = 'times new roman';
-        textoInferiorH2.style.fontFamily = 'times new roman';
-    }
-}
-
-/*Cambiar tamaño de fuente*/
-const tamanioFuente = document.getElementById('tamanioFuente');
-
-tamanioFuente.addEventListener('change', () =>{
-    textoSuperiorH2.style.fontSize = tamanioFuente.value + 'px';
-    textoInferiorH2.style.fontSize = tamanioFuente.value + 'px';
 });
 
 /*Menú texto contorno*/
-const botonContornoNinguno = document. getElementById('ninguno');
-const botonContornoClaro = document.getElementById('claro');
-const botonContornoOscuro = document.getElementById('oscuro');
-
 botonContornoNinguno.addEventListener('click', () => {
     textoSuperiorH2.style.textShadow = 'none';
     textoInferiorH2.style.textShadow = 'none';
@@ -355,22 +338,12 @@ botonContornoOscuro.addEventListener('click', () => {
 });
 
 /*Menú texto espaciado*/
-const espaciado = document.getElementById('espaciado');
-
 espaciado.addEventListener('change', () => {
     textoSuperiorH2.style.letterSpacing = espaciado.value + 'px';
     textoInferiorH2.style.letterSpacing = espaciado.value + 'px';
 });
 
 /*Menú texto interliniado*/
-const interliniado = document.getElementById('interliniado');
-const ceroPuntoOcho = document.getElementById('ceroPuntoOcho');
-const uno = document.getElementById('uno');
-const unoPuntoDos = document.getElementById('unoPuntoDos');
-const unoPuntoCinco = document.getElementById('unoPuntoCinco');
-const dos = document.getElementById('dos');
-const dosPuntoCinco = document.getElementById('dosPuntoCinco');
-
 interliniado.addEventListener('change', () => {
     cambiarInterliniado(interliniado);
 });
