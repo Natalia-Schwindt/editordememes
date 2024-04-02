@@ -2,7 +2,6 @@
 const botonImagen = document.getElementById('botonImagen');
 const botonTexto = document.getElementById('botonTexto');
 const botonModo = document.getElementById('botonModo');
-
 const aside = document.getElementById('myAside');
 const aside2 = document.getElementById('myAside2');
 const header = document.getElementById('miHeader');
