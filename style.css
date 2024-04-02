@@ -23,6 +23,7 @@
     color: rgb(37, 41, 53);
  }
 
+/* Header */
 header {
     display: flex;
     flex-direction: column;
@@ -34,6 +35,9 @@ header {
 header h1{
     margin-bottom: 10px;
     font-size: 40px;
+}
+.iconMenu {
+    display: none;
 }
 nav ul{
     display: flex;
@@ -77,10 +81,11 @@ section {
     padding: 30px;
     font-size: 40px;
     font-family: Impact;
+    line-height: 1;
 }
 
 #imageDiv{
-    height: 400px;
+    height: 20em;
     background-color: black;
 }
 
@@ -95,27 +100,33 @@ main button {
  main button i{
     padding: 5px;
  }
+
+ /* Aside */
 aside {
     position: absolute;
     top: 0;
     right: 0;
     width: 15%;
-    height: 122%;
+    height: 100%;
 }
 
 .barraLateral{
-    display: flex;
+    display: block;
     flex-direction: column;
     padding: 15px;
     background-color: rgb(171, 172, 174);
 }
+
 input, select{
-    margin: 10px 0;
+    margin: 8px 0;
     padding: 5px;
 }
 .ancho{
     width: 30%;
     margin-right: 5px;
+}
+.anchoInput{
+    width: 90%;
 }
 ::placeholder{
     color: white;
@@ -142,4 +153,53 @@ form h4{
 aside button{
     background-color: var(--color-fondo-caja-texto);
     color: var(--color-texto); 
+}
+
+footer{
+    display: flex;
+    width: 20%;
+    margin: 10px auto;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1300px){
+    header{
+        width: 100%;
+    }
+    aside{
+        width: 18%;
+    }
+    #myAside, #myAside2{
+        display: none;
+    }
+    input, select{
+        margin: 5px 0;
+        padding: 3px;
+    }
+    #imageDiv{
+        height: 200px;
+    }
+    #fondo h2{
+        font-size: 25px;
+    }
+
+}
+@media screen and (max-width: 425px){
+    aside{
+        width: 100%;
+    }
+    .iconMenu{
+        position: fixed;
+        display: block;
+        top: 5px;
+        right: 5px;
+        z-index: 10;
+        cursor: pointer;
+    }
+    .close{
+        background-color: rgb(171, 172, 174);
+        border: none;
+        padding: 3px;
+        display: none;
+    }
 }

@@ -1,9 +1,10 @@
 //Variables de objetos capturados
 const botonImagen = document.getElementById('botonImagen');
 const botonTexto = document.getElementById('botonTexto');
+const botonModo = document.getElementById('botonModo');
+
 const aside = document.getElementById('myAside');
 const aside2 = document.getElementById('myAside2');
-const botonModo = document.getElementById('botonModo');
 const header = document.getElementById('miHeader');
 const icono = document.getElementById('icono');
 const imageDiv = document.getElementById('imageDiv');
@@ -53,7 +54,7 @@ const botonContornoNinguno = document. getElementById('ninguno');
 const botonContornoClaro = document.getElementById('claro');
 const botonContornoOscuro = document.getElementById('oscuro');
 const espaciado = document.getElementById('espaciado');
-const interliniado = document.getElementById('interliniado');
+const interlineado = document.getElementById('interlineado');
 const ceroPuntoOcho = document.getElementById('ceroPuntoOcho');
 const uno = document.getElementById('uno');
 const unoPuntoDos = document.getElementById('unoPuntoDos');
@@ -342,34 +343,34 @@ espaciado.addEventListener('change', () => {
 });
 
 /*Menú texto interliniado*/
-interliniado.addEventListener('change', () => {
-    cambiarInterliniado(interliniado);
+interlineado.addEventListener('change', () => {
+    cambiarInterlineado(interlineado);
 });
 
-const cambiarInterliniado = (interliniado) => {
-    if (interliniado.value === 'ceroPuntoOcho'){
-        textoSuperiorH2.style.lineHeight  = '0.8';
-        textoInferiorH2.style.lineHeight  = '0.8';
+const cambiarInterlineado = (interlineado) => {
+    if (interlineado.value === 'ceroPuntoOcho'){
+        textoSuperiorH2.style.lineHeight = '0.8';
+        textoInferiorH2.style.lineHeight = '0.8';
     }
-    if (interliniado.value === 'uno'){
-        textoSuperiorH2.style.lineHeight  = '1';
-        textoInferiorH2.style.lineHeight  = '1';
+    if (interlineado.value === 'uno'){
+        textoSuperiorH2.style.lineHeight = '1';
+        textoInferiorH2.style.lineHeight = '1';
     }
-    if (interliniado.value === 'unoPuntoDos'){
-        textoSuperiorH2.style.lineHeight  = '1.2';
-        textoInferiorH2.style.lineHeight  = '1.2';
+    if (interlineado.value === 'unoPuntoDos'){
+        textoSuperiorH2.style.lineHeight = '1.2';
+        textoInferiorH2.style.lineHeight = '1.2';
     }
-    if (interliniado.value === 'unoPuntoCinco'){
-        textoSuperiorH2.style.lineHeight  = '1.5';
-        textoInferiorH2.style.lineHeight  = '1.5';
+    if (interlineado.value === 'unoPuntoCinco'){
+        textoSuperiorH2.style.lineHeight = '1.5';
+        textoInferiorH2.style.lineHeight = '1.5';
     }
-    if (interliniado.value === 'dos'){
-        textoSuperiorH2.style.lineHeight  = '2';
-        textoInferiorH2.style.lineHeight  = '2';
+    if (interlineado.value === 'dos'){
+        textoSuperiorH2.style.lineHeight = '2';
+        textoInferiorH2.style.lineHeight = '2';
     }
-    if (interliniado.value === 'dosPuntoCinco'){
-        textoSuperiorH2.style.lineHeight  = '2.5';
-        textoInferiorH2.style.lineHeight  = '2.5';
+    if (interlineado.value === 'dosPuntoCinco'){
+        textoSuperiorH2.style.lineHeight = '2.5';
+        textoInferiorH2.style.lineHeight = '2.5';
     }
 }
 
@@ -389,5 +390,38 @@ btnDownload.addEventListener('click', () => {
         a.download = 'captured.png';
         a.href = canvas.toDataURL('image/png');
         a.click();
+    });
+});
+
+// Aside en mobile
+document.addEventListener('DOMContentLoaded', function () {
+    const close = document.getElementById('close');
+
+    // Función para abrir un aside y mostrar su botón de cerrar
+    function abrirAside(aside) {
+        aside.style.display = 'block';
+        close.style.display = 'block';
+    }
+
+    // Función para cerrar un aside y ocultar su botón de cerrar
+    function cerrarAside(aside) {
+        aside.style.display = 'none';
+        close.style.display = 'none';
+    }
+
+    // Evento al hacer clic en el botón de imagen
+    botonImagen.addEventListener('click', function () {
+        abrirAside(aside);
+    });
+
+    // Evento al hacer clic en el botón de texto
+    botonTexto.addEventListener('click', function () {
+        abrirAside(aside2);
+    });
+
+    // Evento al hacer clic en el botón de cerrar
+    close.addEventListener('click', function () {
+        cerrarAside(aside);
+        cerrarAside(aside2);
     });
 });

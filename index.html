@@ -13,15 +13,21 @@
 </head>
 
 <body>
+    <head>    
 
     <header id="miHeader">
+        <div class="iconMenu" id="iconMenu">
+            <!-- <button class="open" id="open"><i class="fas fa-bars"></i></button> -->
+            <button class="close" id="close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
         <h1>Generador de Memes</h1>
+        
         <nav>
             <ul>
                 <li><button id="botonImagen" aria-label="Editor Imágen"><i class="fa-regular fa-file-image" aria-hidden="true"></i>&nbsp;Imágen</button></li>
                 <li><button id="botonTexto" aria-label="Editor Texto"><i class="fa-solid fa-font" aria-hidden="true"></i>&nbsp;Texto</button></li>
-                <li><button id="botonModo" aria-label="Cambiar a Modo Claro Oscuro"><i class="fa-regular fa-lightbulb" aria-hidden="true"></i><span id="icono" aria-hidden="true">&nbsp;Modo
-                            oscuro</span></button></li>
+                <li><button id="botonModo" aria-label="Cambiar a Modo Claro Oscuro"><i class="fa-regular fa-lightbulb" aria-hidden="true"></i><span id="icono" aria-hidden="true">&nbsp;Modo oscuro</span></button></li>
             </ul>
         </nav>
     </header>
@@ -35,8 +41,7 @@
                 <div id="imageDiv" aria-label="Imagen de meme">
                 </div>
 
-                <h2 id="textoInferiorH2">BOTTOM TEXT
-                </h2>
+                <h2 id="textoInferiorH2">BOTTOM TEXT</h2>
             </div>
 
             <button id="btnDownload" aria-label="Descargar meme"><i class="fa-solid fa-download" aria-hidden="true"></i>Descargar meme</button>
@@ -47,19 +52,19 @@
             <h3>TEXTO</h3>
             <form action="#">
                 <label for="textoSuperiorInput">SUPERIOR</label><br>
-                <input name="textoSuperiorInput" placeholder="TOP TEXT" id="textoSuperiorInput" aria-label="Escribe el texto superior del meme"><br>
+                <input name="textoSuperiorInput" placeholder="TOP TEXT" id="textoSuperiorInput" aria-label="Escribe el texto superior del meme" class="anchoInput"><br>
 
                 <input id="sinTextoSuperior" type="checkbox">
                 <label for="sinTextoSuperior">Sin texto superior</label><br>
 
                 <label for="textoInferiorInput">INFERIOR</label><br>
-                <input name="textoInferiorInput" placeholder="BOTTOM TEXT" id="textoInferiorInput" aria-label="Escribe el texto inferior del meme"><br>
+                <input name="textoInferiorInput" placeholder="BOTTOM TEXT" id="textoInferiorInput" aria-label="Escribe el texto inferior del meme" class="anchoInput"><br>
 
                 <input id="sinTextoInferior" type="checkbox">
                 <label for="sinTextoInferior">Sin texto inferior</label><br>
 
                 <label for="fuente">FUENTE</label><br>
-                <select id="fuente" name="fuente" aria-label="Seleccione el tipo de fuente">
+                <select id="fuente" name="fuente" aria-label="Seleccione el tipo de fuente" class="anchoInput">
                     <option id="arial" value="arial">Arial</option>
                     <option id="arialBlack" value="arialBlack">Arial Black</option>
                     <option id="americanTypewriter" value="americanTypewriter">American Typewriter</option>
@@ -100,10 +105,10 @@
                 <button type="button" id="oscuro" aria-label="Contorno de texto oscuro">Oscuro</button>
 
                 <h4>ESPACIADO</label>
-                    <input id="espaciado" type="number" placeholder="35" aria-label="Espaciado">
+                    <input id="espaciado" type="number" placeholder="35" aria-label="Espaciado" class="anchoInput">
 
                     <H4>INTERLINEADO</H4>
-                    <select id="interliniado" name="interliniado" aria-label="Interliniado">
+                    <select id="interlineado" name="interlineado" aria-label="Interlineado">
                         <option id="ceroPuntoOcho" value="0">0.8</option>
                         <option id="uno" value="1">1</option>
                         <option id="unoPuntoDos" value="12">1.2</option>
@@ -118,7 +123,7 @@
             <h3>IMÁGEN</h3>
             <form action="#">
                 <label for="imageUrlInput">URL</label><br>
-                <input type="url" id="imageUrlInput" name="imageUrlInput" aria-label="Url de la imágen">
+                <input type="url" id="imageUrlInput" name="imageUrlInput" aria-label="Url de la imágen" class="anchoInput">
                 <h4>FONDO</h4>
                 <input type="color" id="colorFondoImagen" aria-label="Color de fondo de la imágen">
                 <select id="efectoFondoImagen" name="efectoFondoImagen" aria-label="Mezcla del color del fondo y de la imágen">
