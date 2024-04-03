@@ -187,6 +187,9 @@ footer{
 
 }
 @media screen and (max-width: 425px){
+    section{
+        width: 100%;
+    }
     aside{
         width: 100%;
     }
@@ -203,5 +206,8 @@ footer{
         border: none;
         padding: 3px;
         display: none;
+    }
+    #fondo{
+    width: 60%;
     }
 }
